@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<style>
+    .title{
+    text-align: right;
+    width: 40%;
+    margin:auto;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    margin-top:30px;
+    background-color: #ffc107;
+}
+</style>
+<div class="title">پیام </div>
+                    <div class="autoplay" style="width:40%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd;padding:20px">
+                        <div style="background-color: #f5f5fd;  height: auto;width:90%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding:5px;">
+ {{m}}
+
+ 
+ </div>
+ <a class="btn btn-warning" style="width:40%;margin-right:30%;margin-top:5%" href="/usercpanel">بازگشت</a>
+ </div>
+{% endblock %}

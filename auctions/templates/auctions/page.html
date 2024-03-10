@@ -1,0 +1,19 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+<style>
+    .article{
+    margin:auto; width: 60%;box-sizing: border-box;height: 400px;background-color: #fafafa;border:1px solid #dcdcdc;border-radius: 10px; word-wrap: break-word;
+}
+</style>
+<div style="min-height: 300px; text-align: center;box-sizing: border-box; padding: 30px;">
+    <h2>{{page.title}}</h2>
+    <br>
+   <article class="article">
+    <div style="box-sizing: border-box;width:100%;height:100%;float: right;padding:2%;text-align:right ; overflow-y:auto">
+        <p style="margin-top: auto;font-family: 'BYEKAN', sans-serif;font-size: 22px;font-weight: bolder;color: #444;white-space: pre-line">{{page.text}}</p>
+        </div>
+</article>
+</div>
+{% endblock %}

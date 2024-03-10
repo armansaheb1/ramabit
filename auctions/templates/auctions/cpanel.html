@@ -1,0 +1,1403 @@
+       {% load static %}
+<!DOCTYPE html>
+<html lang='fa'>
+    <head>
+        <link href="{% static 'iransans.css' %}?v=5" rel="stylesheet">     
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'admin/style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+        
+        
+        
+        
+        <style>
+          .titleshop{
+    text-align: right;
+    width: 80%;
+    margin:auto;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #ffc107;
+    text-align:right;
+    margin-top:30px;
+}
+a{
+color:#444;
+text-decoration:none;
+}
+a:hover{
+color:#444;
+}
+        .tozih{
+
+            white-space: pre-line
+
+        }
+            html , body{
+    background-color: #e6e9eD;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'BYEKAN';
+    color: #444444;
+}
+.kasbno{
+    position:relative;
+    margin-top:-5px;
+    display:none;
+}
+.kasbyes{
+    display:block;
+}
+h1, h2, h3, h4 , h5 ,h6{
+    font-family:'BYEKAN';
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    direction: ltr;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #d4d4ff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #cdcdcd; 
+    width: 80%;
+    border-radius: 4px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #17a2b8; 
+    
+  }
+input{
+    text-align: right;
+}
+a{
+    text-decoration: none;
+    color: #444444;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+#right-sidebar{
+    position: fixed;
+    right: 0;
+    width: 280px;
+    height: 1000px;
+    float: right;
+    background-color: #000012;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 150px;
+}
+.clock {
+    position: relative;
+    margin: 0 auto;
+    z-index: 5;
+}
+#right-sidebar ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 0;
+    float: right;
+    margin-top: -10px;
+}
+#right-sidebar h5 {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    width: 100%;
+    float: right;
+    color: #444444;
+    font-family: 'BYEKAN';
+    font-size: 16px;
+}
+#right-sidebar ul li {
+    position: relative;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    float: right;
+    color: white;
+    font-family: 'BYEKAN';
+    font-size: 14px;
+}
+#right-sidebar ul li:hover {
+    background-color: #e6e9eD;
+    border-radius: 50px 50px 50px 50px ;
+    color: #000012;
+}
+#right-sidebar ul li a{
+    list-style: none;
+    text-decoration: none;
+    font-family: 'BYEKAN';
+}
+
+
+#main {
+    position: absolute;
+    width: 60%;
+    margin-left: 8%;
+    margin-top: 2%;
+    height: 550px;
+}
+#dashboard{
+    width: 100%;
+    height: 100%;
+}
+.current-info {
+    width: 90%;
+    min-height: 200px;
+    background-color: white;
+    margin: 0 auto;
+}
+.title{
+    text-align: right;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #ffc107;
+}
+table{
+    direction: rtl;
+    width:100%;
+}
+.logo {
+
+    height: 120px;
+    width: 150px;
+    right: 40px;
+    background: url(logo.png);
+    background-size: 100% 100%;
+}
+        </style>
+        <style>
+        body{
+            font-family:'iransans';
+        }
+            #iden td{
+                padding: 20px;
+            }
+        </style>
+        <style>
+            #arrows{
+                display: none;
+              }
+              #right-sidebar{
+                  width:280px;
+              }
+              .logoa{
+                  margin-top:20px;
+                  width:80px;
+                  height:80px;
+              }
+              nav i{
+                  font-size:18px
+              }
+            .animation {
+            animation-name: example;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+                }
+            @keyframes example {
+              0%   {width: 20%;}
+              100% {width: 100px;}
+            }
+            .animation2 {
+            animation-name: example2;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+                }
+            @keyframes example2 {
+              0%   {width: 100px;}
+              100% {width: 20%;}
+            }
+            .animation3 {
+            animation-name: example3;
+            animation-duration: .2s;
+            animation-fill-mode: forwards;
+                }
+            @keyframes example3 {
+              0%   {width: 20%;}
+              100% {width: 100px;}
+            }
+            .animation4 {
+            animation-name: example4;
+            animation-duration: .2s;
+            animation-fill-mode: forwards;
+                }
+            @keyframes example4 {
+              0%   {width: 100px;}
+              100% {width: 20%;}
+            }
+            @media only screen and (max-width: 1024px) {
+              #arrows{
+                display: block;
+              }
+              .logoa{
+                  margin-top:20px;
+                  width:90px;
+                  height:90px;
+              }
+            }
+        </style>
+         <script src="https://kit.fontawesome.com/cce1ac2aed.js" crossorigin="anonymous"></script>
+    </head>
+    <body style="font-family:'iransans';">
+      <div class="clock" id="clock" style="position: fixed;right: 0;width: 355px; height: 150px;background-color: #000012;  margin: auto;text-align: center;border-radius:75px  0 0 75px  " ><canvas style="position: absolute;left: 0;" width="150" height="150" id="canvas"></canvas><div class="logoa" style="position:absolute ;background: url(/media/{{set.logo}}) ;background-size:100% 100%;background-repeat:no-repeat;right:30px;top:10px;border-radius:20px" id="logo1"></div></div>
+        <nav style="text-align:right; overflow: scroll ; direction: rtl; height: 100%;margin-top:150px" id="right-sidebar">
+            <div style="height: 1200px">
+           
+            <ul style="margin-top: -60px;">
+              <br><br>
+                          
+              <h5  style="color:white;">{{ user.username }} <br><t style="font-weight: bold; text-align: right;margin-top:0px;"> عزیز خوش آمدید </t></h5>
+
+                <a href="{%url 'index'%}" ><li><i class="bi bi-house" style="font-size: 2rem; "></i>&nbsp;&nbsp;&nbsp;&nbsp;  <t style="font-size: 18px;">  خانه </t></li></a>
+                <a href="javascript:;" id="dashbtn"><li><i class="bi bi-speedometer2" style="font-size: 2rem; "></i>&nbsp;&nbsp;&nbsp;&nbsp;  <t style="font-size: 18px;">  داشبورد</t></li></a>
+                <a href="javascript:;" id="accountbtn"><li><i class="bi bi-person" style="font-size: 2rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 18px"> اطلاعات کاربری</t></li></a>
+                <a href="javascript:;" id="fplanbtn"><li><i class="bi bi-box" style="font-size: 2rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 18px">پلن ها</t></li></a>
+                <a href="javascript:;" id="walletssbtn"><li><i class="bi bi-cash-stack" style="font-size: 2rem;"></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 18px">  موجودی حساب کاربری  </t></li></a>
+                <a href="javascript:;" id="kasb"><li><i class="bi bi-briefcase" style="font-size: 2rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 18px">    کسب درآمد  </t></li></a>
+                <a class="kasbno" href="javascript:;" id="kasb1"><li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-circle-fill" style="font-size: 1rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 14px">     استخدام تریدر  </t></li></a>
+                <a class="kasbno" href="javascript:;" id="kasb2"><li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-circle-fill" style="font-size: 1rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 14px">    استخدام توسعه دهنده  </t></li></a>
+                <a class="kasbno" href="javascript:;" id="kasb3"><li>&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-circle-fill" style="font-size: 1rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 14px">     مجموعه گیری  </t></li></a>
+                <a href="javascript:;" id="transbtn"><li><i class="bi bi-receipt" style="font-size: 2rem; "></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 18px">  شارژ حساب کاربری  </t></li></a>
+                <a href="javascript:;" id="transsbtn"><li><i class="bi bi-receipt-cutoff" style="font-size: 2rem; "></i>&nbsp;&nbsp;&nbsp;&nbsp;  <t style="font-size: 18px">   برداشت</t></li></a>
+                <a href="javascript:;" id="hisbtn"><li><i class="bi bi-clock-history" style="font-size: 2rem; "></i>  &nbsp;&nbsp;&nbsp;&nbsp;<t style="font-size: 18px;">  تاریخچه ی درآمد ها</t></li></a>
+                <a href="javascript:;" id="histransbtn"><li> <i class="bi bi-clock-history" style="font-size: 2rem; "></i>&nbsp;&nbsp;&nbsp;&nbsp;  <t style="font-size: 18px;">  تاریخچه ی برداشت و واریز </t></li></a>
+                <a href="javascript:;" id="ticketbtn"><li><i class="bi bi-chat-square-text" style="font-size: 2rem; "></i>&nbsp;&nbsp;&nbsp;&nbsp;  <t style="font-size: 18px;">   پشتیبانی </t><t style="float:left">{{unread}}</t></li></a>
+                <a href="javascript:;" id="idenbtn"><li><i class="bi bi-person-check" style="font-size: 2rem; "></i>&nbsp;&nbsp;&nbsp;&nbsp;  <t style="font-size: 18px;">  احراز هویت</t></li></a>
+                <a href="{% url 'logout' %}"><li><i class="bi bi-box-arrow-right" style="font-size: 2rem;"></i> &nbsp;&nbsp;&nbsp;&nbsp; <t style="font-size: 18px;">  خروج</t></li></a>
+                
+                </ul>
+        </div>
+        </nav>
+        <div id="main" style="width:65%; margin:3%;min-height:2000px">
+            <section id="dashboard">
+                <div class="current-info">
+                    
+                    <div class="title">موجودی </div>
+                    <div class="autoplay" style="width: 95%;margin: auto;height:auto;overflow-y:hidden">
+                    {%for wal in wallet %}
+                        <div style="background-color: #f5f5fd;  height: 200px;width:18%; margin: 1%;border:1px solid #dcdcdc;border-radius: 10px;float:left">
+                        <img style="position:relative;width: 60%; margin-left: 20%; margin-top: 20px;float:none" src="media/{{wal.0}}">
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{wal.2}}</h6>
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{wal.1}}</h6>
+                        </div>
+                        {%empty%}
+                        <div style="background-color: #f5f5fd;  height: 180px; margin: 10px;">
+                            <br><br>
+                            <h5 style="margin: auto; margin-top: 20px;text-align: center;">هنوز واریزی نداشته اید</h5>
+                            </div>
+                        {%endfor%}
+                    </div>
+                    </div>
+                    
+                                    <div style="width: 92%;
+    min-height: 150px;
+    margin: 0 auto; text-align:left; margin-top:20px">
+                
+                        <button id="ticketbtn2" style="width:30%;height:140px; float:left;margin-right:4% ;margin-left:1% ; background:#a373b6;text-align:center;color:#444;padding:15px;border:none">
+                            <h4>تیکت ها  </h4>        <br>                   <h4>{{unread}}</h4>
+                            </button>
+                        <button id="planbtn2" style="width:30%;height:140px; float:left;margin-right:4% ; background:#8898cf;text-align:center;color:#444;padding:15px;border:none">
+                            <h4>پلن های  فعال</h4>      <br>                     <h4>{{fplan}}</h4>
+                            </button>
+                        <button id="walletbtn2" style="width:30%;height:140px; float:left; background:#aaccff;text-align:center;color:#444;padding:15px;border:none">
+                            <h4>ارز های  شما</h4>      <br>                     <h4>{{arz}}</h4>
+                            </button>
+                        
+                    </div>
+                    
+                                    <div style="width: 90%;
+    min-height: 80px;
+    background-color: white;
+    margin: 0 auto; text-align:left; margin-top:20px">
+                    <div  class="title">لینک دعوت</div>
+                    <button class="btn btn-success copy" style="width:15%;margin:auto; ">کپی</button>
+                    <input value="www.ramabit.com/registerinv/{{user.ref}}" style="width:84%;margin: auto;margin-top:5px;font:14px ;calibri;height:30px;border:none;text-align:right">
+                    
+                    </div>
+                    
+                    
+                    
+    <div style="width: 90% ;min-height: 80px;background-color: white;margin: 0 auto; text-align:right; margin-top:20px" >
+                    <div class="title">معرف</div>
+                    
+                    <div style="width: 80%;margin: auto;font:22px 'calibri;height:30px">
+                 {{inv}}
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    <div style="width: 90%;
+                     box-sizing:border-box;
+                     margin:auto;
+                     ">
+                    
+                     <div style="width: 40%;
+                     box-sizing:border-box;
+                     float:right;
+    min-height: 80px;
+    height:auto;
+    background-color: white;
+    margin: 0 auto; text-align:right; margin-top:20px">
+                    <div class="title" style="text-align:center">زیر مجموعه های درجه اول</div>
+                    
+                    <div style="font:22px 'calibri ; height:30px">
+                        <table style="width:40%;margin:auto; text-align:center  ; position:relative">
+                        <tr>
+                            <th>
+                                
+                            </th>
+                           
+                        </tr>
+                        {%for item in d1%}
+                        <tr>
+                        <td>{{item}}</td>
+                        </tr>
+                        {%endfor%}
+                        </table>
+                    </div>
+                    </div>
+                    
+                      <div style="width: 45%;
+                      box-sizing:border-box;
+                      float:left;
+    min-height: 80px;
+    height:auto;
+    background-color: white;
+    margin: 0 auto; text-align:right; margin-top:20px">
+                    <div class="title" style="text-align:center">زیر مجموعه های درجه دوم</div>
+                    
+                    <div style="font:22px 'calibri;height:30px">
+                        <table style="margin:auto; width:40% ; text-align:center">
+                        {%for item in d2%}
+                        <tr>
+                        <td>{{item}}</td>
+                        </tr>
+                        {%endfor%}
+                        
+                        </table>
+                    </div>
+                    </div>
+                    
+                    </div>
+                </section>
+                
+                <section id="account" style="display: none;">
+                    
+                    <div style="width: 90%; margin: auto;">
+                    <div class="title" style="width:90%;margin:auto;margin-top:30px;text-align:center">اطلاعات  کاربری </div>
+                     
+                     
+                    <div class="autoplay" style="width: 90%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd;padding:5%;text-align:right">
+                    
+                    نام  <input class="form-control" readonly value="{{request.user.name}}">
+                     نام خانوادگی  <input  class="form-control" readonly value="{{request.user.lastname}}">
+                      نام کاربری  <input class="form-control" readonly value="{{request.user.username}}">
+                       تلفن  <input class="form-control" readonly value="{{request.user.mobile}}">
+                        ایمیل  <input class="form-control" readonly value="{{request.user.email}}">
+                       
+
+                    
+                    <div class="title" style="width:90%;margin:auto;margin-top:30px;text-align:center">  تغییر کلمه عبور </div>
+                     
+                     
+                    <div class="autoplay" style="width: 90%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd;padding:5%;text-align:right">
+                        <form action="changepass" method="POST">
+                            {%csrf_token%}
+                    کلمه عبور قبلی  <input class="form-control" type="password"  name="opassword">
+                     کلمه عبور جدید   <input  class="form-control" type="password" name="password">
+                      تکرار کلمه عبور   <input class="form-control"  type="password" name="repassword">
+                      <input type="submit" >
+                       </form>
+
+                    </div>
+                   </div>
+                        </div>
+                </section>
+                
+                
+                
+                <section id="fplans" style="display: none;">
+                    <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:90%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 15px;text-align:right;;white-space: pre-line">
+                        <p style="border-style:solid;border-radius:5px;border-width:1px;padding:5px">{{tplan}}</p>
+                    </div>
+                  <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #ffc107; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;">
+                  <h3> خرید پلن  جدید     </h3><br>
+                  <button class="btn btn-success" id="shopbtn">اضافه کردن پلن جدید</button>
+                  </div>
+                    <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;">
+                        <h4 style="margin-bottom: 50px;"> پلن های فعال</h4>
+                    <table style="direction: rtl;" class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">نوع ارز</th>
+                            <th scope="col">مبلغ</th>
+                            <th scope="col">زمان ثبت </th>
+                            <th scope="col">دوره سود پلن</th>
+                            <th scope="col">درصد سود پلن</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {%for plan in bid%}
+                          <tr style="border-color:black">
+                            <th style="width: 15%;"><img style="width: 60%;padding: 0;" src="media/{{plan.0}}"></th>
+                            <td style="color: {{plan.4}};">{{plan.1}}</td>
+                            <td style="color: {{plan.4}};">{{plan.2}}</td>
+                            <td style="color: {{plan.4}};">{{plan.3}}</td>
+                            <td style="color: {{plan.4}};">{{plan.4}}</td>
+                            <td >
+                                <form action="closeplan" method="POST">
+                                    {%csrf_token%}
+                                    <input hidden name="bidid" value='{{plan.5}}'>
+                                <button class="btn btn-info">بستن پلن</button>
+                            </form>
+                            </td>
+                          </tr>
+                        </tbody>
+                        {%empty%}
+                        <td colspan="6">پلنی موجود نیست</td>
+                        {%endfor%}
+                        </table>
+                    
+                </div>
+                </section>
+                <section id="trans" style="display: none;">
+                    <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:80%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{addam}}
+                    </div>
+                    <div style="width: 90%; margin: auto;">
+                    <div class="title" style="width:90%;margin:auto;margin-top:30px;text-align:center">شارژ حساب کاربری </div>
+                     
+                     
+                    <div class="autoplay" style="width: 90%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd;">
+                    {%for cur in cur %}
+                    <div style="background-color: #f5f5fd;  height: 560px;width:30%; margin: 1%;border:1px solid #dcdcdc;border-radius: 10px;float:left;text-align:center;padding:5px">
+                    
+                            <img style="width: 20%;" src="media/{{cur.pic}}"><br><br>
+                            <h5>{{cur.brand}}</h5>
+                            <img style="width: 40%;" src="media/{{cur.qr}}"><br><br>
+                        <form  enctype="multipart/form-data" action="addamountreq" method="POST">
+                            
+                            <div >
+
+                            <h4 style="overflow-x:auto;overflow-y:hidden;text-align:center;font-family:'calibri"><input style="border:none;text-align:center;width:90%;margin-left:5%" href="#" value="{{cur.address}}"></h4><br>
+                                                        <button class="btn btn-warning copy">کپی</button>
+
+                            </div><br><br>
+                            {%csrf_token%}
+
+                            <input class="form-control" type="number" step="any" style="text-align: right; padding: 5px;width: 90%;margin: auto;text-align: center;" name="amount" placeholder=" مبلغ  " required><br>
+                            <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;text-align: center;" type="text" name="link" placeholder="کد یا لینک پیگیری" required><br>
+
+                                <input hidden name="curid" type="number" value="{{cur.id}}" readonly>
+                                <input hidden name="userid" type="number" value="{{request.user.id}}" readonly><br>
+                                <input class="btn btn-warning" type="submit">
+                        </form>  
+                    
+                    </div>
+                    {%endfor%}
+                    </div>
+                    </div>
+                        
+                </section>
+                <section id="walletss" style="display: none;">
+                    <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:90%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{tmojoodi}}
+                    </div>
+                    <div style="clear:both"></div>
+                    
+                     <div class="title" style="width:90%;margin:auto;margin-top:30px;">موجودی </div>
+                     
+                     
+                    <div class="autoplay" style="width: 90%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd">
+                    {%for wal in wallet %}
+                        <div style="background-color: #f5f5fd;  height: 350px;width:23%; margin: 1%;border:1px solid #dcdcdc;border-radius: 10px;float:left">
+                        <img style="position:relative;width: 60%; margin-left: 20%; margin-top: 20px;float:none" src="media/{{wal.0}}">
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{wal.2}}</h6>
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{wal.1}}</h6><br>
+                        <form  >
+                            {%csrf_token%}
+
+                          <label class="btn btn-success amreqp" id="amreqp" style="width:70%;margin-left:15%"> واریز</label>
+                          <input type="submit" id="sub1" value="" hidden>
+                          
+                          </form><br>
+                          <form action="admindecrease" method="POST">
+                            {%csrf_token%}
+                          <label class="btn btn-danger amreqn" id="amreqn" style="width:70%;margin-left:15%"> برداشت</label>
+                          
+                          <input type="submit" id="sub2" hidden>
+                          
+                          </form>
+                        </div>
+                        {%empty%}
+                        <div style="background-color: #f5f5fd;  height: 180px; margin: 10px;">
+                            <br><br>
+                            <h5 style="margin: auto; margin-top: 20px;text-align: center;">هنوز واریزی نداشته اید</h5>
+                            </div>
+                        {%endfor%}
+                    </div>
+                    
+                </section>
+                <section id="transs" style="display: none;">
+                   <div style="width: 90%; margin: auto;">
+                      <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:90%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{askam}}
+                    </div>
+                      
+                    <div class="title" style="width:90%;margin:auto;margin-top:30px;text-align:center">  برداشت </div>
+                     
+                   
+
+
+
+
+
+                    <div class="autoplay" style="width: 90%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd">
+                    {%for wal in wallet %}
+                        <div style="background-color: #f5f5fd;  height: 450px;width:30%; margin: 1%;border:1px solid #dcdcdc;border-radius: 10px;float:left">
+                        <img style="position:relative;width: 60%; margin-left: 20%; margin-top: 20px;float:none" src="media/{{wal.0}}">
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{wal.2}}</h6>
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{wal.1}}</h6><br>
+                        <form  enctype="multipart/form-data" action="askamountreq" method="POST">
+                           {%csrf_token%}
+                          <div>
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;text-align: center;" type="text" name="amount" placeholder=" مبلغ  " required><br>
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;text-align: center;" type="text" name="link" placeholder=" آدرس کیف پول " required><br>
+                      </div>
+                              <input hidden  name="curid" type="number" value="{{wal.3}}" readonly>
+                              <input hidden name="userid" type="number" value="{{request.user.id}}" readonly><br>
+                              <input class="btn btn-info" type="submit" style="width:50%;margin-left:25%">
+                          </form>
+                        </div>
+                        {%empty%}
+                        <div style="background-color: #f5f5fd;  height: 180px; margin: 10px;">
+                            <br><br>
+                            <h5 style="margin: auto; margin-top: 20px;text-align: center;">هنوز واریزی نداشته اید</h5>
+                            </div>
+                        {%endfor%}
+                    </div>
+                
+    
+                  
+
+
+              </div>
+              </section>
+                <section id="hispro" style="display: none;">
+                    <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;">
+                      <h4 style="margin-bottom: 50px;">  تاریخچه سود ها</h4>
+                  <table style="direction: rtl;" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">کاربر</th>
+                          <th scope="col">نوع ارز</th>
+                          <th scope="col">نوع پلن</th>
+                          <th scope="col">مبلغ</th>
+                          <th scope="col">زمان تراکنش </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          {%for plan in pro%}
+                        <tr>
+                          <td>{{plan.0}}</td>
+                          <td><img style="width:20%" src="media/{{plan.4}}"></td>
+                          <th>{{plan.1}}</th>
+                          <td>{{plan.2}}</td>
+                          <td>{{plan.3}}</td>
+                        </tr>
+                      </tbody>
+                      {%empty%}
+                      <td colspan="6">تراکنشی موجود نیست</td>
+                      {%endfor%}
+                      </table>
+                  
+              </div>
+                  </section>
+                <section id="plans"></section>
+                <section id="tarnshistory" style="display: none;">
+                    <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;">
+                        <h4 style="margin-bottom: 50px;">ویرایش پلن ها</h4>
+                    <table style="direction: rtl;" class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">نوع ارز</th>
+                            <th scope="col">مبلغ</th>
+                            <th scope="col">نوع تراکنش</th>
+                            <th scope="col">زمان تراکنش </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {%for plan in trans%}
+                          <tr>
+                            <th style="width: 15%;"><img style="width: 60%;padding: 0;" src="media/{{plan.0}}"></th>
+                            <td style="color: {{plan.4}};">{{plan.1}}</td>
+                            <td style="color: {{plan.4}};">{{plan.2}}</td>
+                            <td style="color: {{plan.4}};">{{plan.3}}</td>
+                          </tr>
+                        </tbody>
+                        {%empty%}
+                        <td colspan="6">تراکنشی موجود نیست</td>
+                        {%endfor%}
+                        </table>
+                    
+                </div>
+                </section>
+                
+                <section id="iden" style="padding-bottom: 100px;display: none;">
+                    <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:90%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{tiden}}
+                    </div>
+                                            <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;">
+                                                <h4 style="margin-bottom: 50px;">  تایید هویت</h4>
+                                                <h5 style="color:red">تایید این بخش فقط برای تراکنش ریالی اجباریست</h5>
+                                                <hr><br><br>
+                                               </div>
+                                             <div class="title" style="width:90%;margin:auto;margin-top:30px;text-align:center">  تایید هویت </div>
+                     
+                   
+
+
+
+
+
+                    <div class="autoplay" style="width: 90%;margin: auto;height:auto;overflow-y:hidden;overflow-x:hidden;background:#fafafd ; padding-bottom:10px">
+                                            <div style="text-align: center;width: 40%; margin-left: 5%;margin-right:5%; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;float:left">
+                                                    <h5>تایید تلفن همراه</h5>
+                                                    <p style=" color:{{mobilevc}} ;">{{mobilev}}</p>
+                                                    <form method="POST" action="verifymobile"> {% csrf_token %}<input name="code"  style="float: right;" class="form-control" type="number" required><label for="submit1"><br><button class="btn btn-info">تایید</button></label> <input  type="submit" hidden> </form>
+                                                    
+                                                    <a style="text-align: center; float: none; margin: 5%;color: black;" style:focus="border:none" href="verifymobile">
+                                                       <button id="mobilesendbtn" class="btn btn-info">ارسال کد</button>
+                                                    </a>
+                                                    <br><br><br><br>
+</div>
+                                            <div style="text-align: center;width: 40%; margin-left: 5%;margin-right: 5%; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;float:left">
+                                                    <h5>تایید ایمیل</h5>
+                                                    <p style='color:{{emailvc}}'>{{emailv}}</p>
+                                                    <form id="emailsend" method="POST" action="verifyemail">{% csrf_token %}<input style="float: right;"  class="form-control" name="code" type="number" required><label for="submit1"><br><button class="btn btn-info">تایید</button></label><br><input hidden type="submit" > </form>
+                                                    
+                                                    <a style="text-align: center; float: none; margin: 5%;color: black;" style:focus="border:none">
+                                                        <button id="mailsendbtn"  class="btn btn-info">ارسال کد</button>
+                                                    </a>
+                                                    <br><br><br><br>
+
+</div>
+                                            <div style="text-align: center;width: 40%; margin-left: 5%;margin-right: 5%; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;float:left">      
+                                                    <h5>تایید کارت ملی</h5>
+                                                    <p style='color:{{mellivc}}'>{{melliv}}</p>
+                                                    <form method="POST" enctype="multipart/form-data"  action="verifymelli">{% csrf_token %}<input class="form-control" name="melli" type="number" placeholder="شماره ملی"><br><input   id="img1" name="melliimg" type="file" required> <input hidden id="submit1" type="submit" >  </form><br>
+                                                    
+                                                    <label for="submit1"><button id="submit1l" class="btn btn-info">ارسال فایل</button></label>
+                                                  
+                                                    <br><br><br><br>
+
+</div>
+                                            <div style="text-align: center;width: 40%; margin-left: 5% ;margin-right: 5%; margin-top: 50px;margin-bottom: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;border:1px solid #dcdcdc;border-radius: 10px;float:left">
+                                                    <h5>تایید کارت بانکی</h5>
+                                                    <p style='color:{{bankvc}}'>{{bankv}}</p>
+                                                    <form method="POST" enctype="multipart/form-data"  action="verifybank">{% csrf_token %}<input class="form-control" name="bank" type="number" placeholder="شماره کارت بانکی"><br><input   id="img1" name="bankimg" type="file" required> <input hidden id="submit2" type="submit" >  </form><br>
+                                                    
+                                                    
+                                                     <label for="submit2"><button id="submit2l" class="btn btn-info">ارسال فایل</button></label>
+
+                                                     <br><br><br><br>
+                                        </div><br><br>
+                                        </div>
+                </section>
+                <section id="ticketread" style="display: none;">
+                      
+
+
+
+                      <div style="text-align: right;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 30px;">
+                          
+                        <h3 id="subtitle" style="margin-bottom: 50px;"></h3>
+                        <h4 id ="subdate"></h4>
+                    
+                    
+                </div>
+                
+               <div id="tickets"></div>
+
+
+
+                      <form style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;" action="ansticket" method="POST" enctype="multipart/form-data">
+                          {%csrf_token%}
+                          <input class="form-control" id="subidans" style="text-align: right; padding: 5px;width: 90%;margin: auto;" hidden name="id" required><br>
+                          <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="متن" required></textarea><br>
+                          <input type="file" name="pic"><label for="ax">:تصویر ضمیمه</label><br><br>
+                          <input hidden type="text" name="place" id="place" value="normal">
+
+                              <input class="btn btn-info" type="submit">
+                      </form>    
+                  </section>
+                <section id="ticket" style="display: none;">
+                      
+
+
+
+                      <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;">
+                        <h4 style="margin-bottom: 50px;"> تیکت ها</h4>
+                    <table style="direction: rtl;" class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">تیتر تیکت</th>
+                            <th scope="col">زمان ثبت</th>
+                            <th scope="col">آخرین وضعیت</th>
+                            <th scope="col">زمان آخرین تغییر وضعیت</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {%for item in subject%}
+                            {%if item.5 == True%}
+                          <tr style="background:#999999">
+                              
+                            <th><a href="#" class="ask">{{item.0}}<input hidden class="id" value="{{item.4}}"><input hidden class="title" value="{{item.0}}"><input hidden class="date" value="{{item.1}}"></a></th>
+                            <td>{{item.1}}</td>
+                            <td>{{item.3}}</td>
+                            <td>{{item.2}}</td>
+                          </tr>
+                          {%else%}
+                          <tr>
+                              
+                            <th><a href="#" class="ask">{{item.0}}<input hidden class="id" value="{{item.4}}"><input hidden class="title" value="{{item.0}}"><input hidden class="date" value="{{item.1}}"></a></th>
+                            <td>{{item.1}}</td>
+                            <td>{{item.3}}</td>
+                            <td>{{item.2}}</td>
+                          </tr>
+                          {%endif%}
+                          <tr>
+                        {%empty%}
+                        <td colspan="6">تیکتی موجود نیست</td>
+                        {%endfor%}
+                          </tr>
+                        </tbody>
+                        
+                        </table>
+                    
+                </div>
+
+
+
+
+                      <form style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;" action="addticket" method="POST" enctype="multipart/form-data">
+                          {%csrf_token%}
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;" type="text" name="title" placeholder="تیتر" required><br>
+                          <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="متن" required></textarea><br>
+                          <input type="file" name="pic"><label for="ax">:تصویر ضمیمه</label><br><br>
+                          <input hidden type="text" name="place" id="place" value="normal">
+
+                              <input class="btn btn-info" type="submit">
+                      </form>    
+                  </section>
+                   <section id="sm" style="display: none;">
+                       <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:80%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{sm}}
+                    </div>
+
+
+                      <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;">
+                        <h4 style="margin-bottom: 50px;">  درخواست کار در سمت  تریدر</h4>
+                  
+                    
+                </div>
+
+
+
+
+                      <form style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;" action="addjob" method="POST" enctype="multipart/form-data">
+                          {%csrf_token%}
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;" type="text" name="title" placeholder="تیتر" required><br>
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;" type="text" name="job" value="تریدر" readonly required><br>
+                          <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="متن" required></textarea><br>
+
+                          <input hidden type="text" name="place" id="place" value="normal">
+
+                              <input class="btn btn-info" type="submit">
+                      </form>    
+                  </section>
+
+ <section id="majmooe" style="display: none;">
+                      <div class="tozih" style="background-color: #ffc107;  min-height: 200px;width:80%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{majmooe}}
+                    </div>
+
+
+               
+                    
+                    
+                      <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;">
+                        <h4 style="margin-bottom: 50px;">    مجموعه گیری   </h4>
+                        <h5> لینک دعوت</h5>
+                        <button class="btn btn-success copy" style="width:15%;margin:auto; ">کپی</button>
+                    <input value="www.ramabit.com/registerinv/{{user.ref}}" style="width:84%;margin: auto;margin-top:5px;font:14px ;calibri;height:30px;border:none;text-align:right">
+                         
+                         
+                         <h5> کد دعوت</h5>
+                        <button class="btn btn-success copy" style="width:15%;margin:auto; ">کپی</button>
+                    <input value="{{user.ref}}" style="width:84%;margin: auto;margin-top:5px;font:14px ;calibri;height:30px;border:none;text-align:right">
+                        </div>
+                  
+
+              
+
+
+       <div style="width: 90%;
+                     box-sizing:border-box;
+                     margin:auto;
+                     ">
+                    
+                     <div style="width: 40%;
+                     box-sizing:border-box;
+                     float:right;
+    min-height: 80px;
+    height:auto;
+    background-color: white;
+    margin: 0 auto; text-align:right; margin-top:20px">
+                    <div class="title" style="text-align:center">زیر مجموعه های درجه اول</div>
+                    
+                    <div style="font:22px 'calibri ; height:30px">
+                        <table style="width:40%;margin:auto; text-align:center  ; position:relative">
+                        <tr>
+                            <th>
+                                
+                            </th>
+                           
+                        </tr>
+                        {%for item in d1%}
+                        <tr>
+                        <td>{{item}}</td>
+                        </tr>
+                        {%endfor%}
+                        </table>
+                    </div>
+                    </div>
+                    
+                      <div style="width: 45%;
+                      box-sizing:border-box;
+                      float:left;
+    min-height: 80px;
+    height:auto;
+    background-color: white;
+    margin: 0 auto; text-align:right; margin-top:20px">
+                    <div class="title" style="text-align:center">زیر مجموعه های درجه دوم</div>
+                    
+                    <div style="font:22px 'calibri;height:30px">
+                        <table style="margin:auto; width:40% ; text-align:center">
+                        {%for item in d2%}
+                        <tr>
+                        <td>{{item}}</td>
+                        </tr>
+                        {%endfor%}
+                        
+                        </table>
+                    </div>
+                    </div>
+                     <div style="width: 40%;
+                     box-sizing:border-box;
+                     float:right;
+    min-height: 80px;
+    height:auto;
+    background-color: white;
+    margin: 0 auto; text-align:right; margin-top:20px">
+                    <div class="title" style="text-align:center">زیر مجموعه های درجه سوم</div>
+                    
+                    <div style="font:22px 'calibri ; height:30px">
+                        <table style="width:40%;margin:auto; text-align:center  ; position:relative">
+                        <tr>
+                            <th>
+                                
+                            </th>
+                           
+                        </tr>
+                        {%for item in d3%}
+                        <tr>
+                        <td>{{item}}</td>
+                        </tr>
+                        {%endfor%}
+                        </table>
+                    </div>
+                    </div>
+                    
+                      <div style="width: 45%;
+                      box-sizing:border-box;
+                      float:left;
+    min-height: 80px;
+    height:auto;
+    background-color: white;
+    margin: 0 auto; text-align:right; margin-top:20px">
+                    <div class="title" style="text-align:center">زیر مجموعه های درجه چهارم</div>
+                    
+                    <div style="font:22px 'calibri;height:30px">
+                        <table style="margin:auto; width:40% ; text-align:center">
+                        {%for item in d4%}
+                        <tr>
+                        <td>{{item}}</td>
+                        </tr>
+                        {%endfor%}
+                        
+                        </table>
+                    </div>
+                    </div>
+                    
+                    </div>
+ 
+                  </section>
+                  
+                  
+                  <section id="st" style="display: none;">
+                      
+                      <div class="st" style="background-color: #ffc107;  min-height: 200px;width:80%; margin: auto;border:1px solid #dcdcdc;border-radius: 10px;padding: 20px;text-align:right;;white-space: pre-line">
+                        {{st}}
+                    </div>
+
+
+                      <div style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;">
+                        <h4 style="margin-bottom: 50px;">  درخواست کار در سمت توسعه دهنده</h4>
+                  
+                    
+                </div>
+
+
+
+                      <form style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;" action="addjob" method="POST" enctype="multipart/form-data">
+                          {%csrf_token%}
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;" type="text" name="title" placeholder="تیتر" required><br>
+                          <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;" type="text" name="job" value="توسعه دهنده" readonly required><br>
+                          <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="متن" required></textarea><br>
+                          <input hidden type="text" name="place" id="place" value="normal">
+
+                              <input class="btn btn-info" type="submit">
+                      </form>    
+                  </section>
+
+
+
+
+
+                    <section id="ticketread" style="display: none;">
+                      
+
+
+
+                      <div style="text-align: right;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 30px;">
+                          
+                        <h3 id="subtitle" style="margin-bottom: 50px;"></h3>
+                        <h4 id ="subdate"></h4>
+                    
+                    
+                </div>
+                
+
+
+
+                          <form style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;" action="ansticket" method="POST" enctype="multipart/form-data">
+                          {%csrf_token%}
+                          <input class="form-control" id="subidans" style="text-align: right; padding: 5px;width: 90%;margin: auto;" hidden name="id" required><br>
+                          <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="متن" required></textarea><br>
+                          <input hidden type="text" name="place" id="place" value="normal">
+
+                              <input class="btn btn-info" type="submit">
+                      </form>    
+                  </section>
+                                      <section id="shop" style="display: none;">
+                                          <br>
+    <h1 style="width: 100%;text-align: center;margin-top:50px;margin-bottom:50px;">پلن های سرمایه گذاری</h1>
+{%for cat in plans %}
+<div class="part" id="{{cat.1}}">
+                    <a href="#{{cat.1}}">
+                    <div class="titleshop" >{{cat.1}} <img style="position:relative;width: 3%; float:none;" src="media/{{cat.2}}"></div>
+                    </a>
+                    
+                    <div class="autoplayshop" style="width: 80%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd;padding-top:30px;display:none">
+                        {%for item in cat.0%}
+                        <a href="/listing/{{item.id}}">
+                         <div style="background-color: #f5f5fd;  height: 350px;width:30%; margin: 1.5%;border:1px solid #dcdcdc;border-radius: 10px;float:right;text-align:center">
+                        <img style="position:relative;width: 20%; margin-top: 20px;float:none" src="media/{{cat.2}}">
+                        <h5 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{item.title}}</h5>
+                        <p>{{item.des}}</p>
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{item.percent}}:سود</h6>
+                        </div>
+                        </a>
+                        
+                        
+                        
+                        
+                        {%empty%}
+    <h2>...در حال حاضر پلنی موجود نیست</h2>
+    
+    {%endfor%}
+    
+                       </div> </div>
+     {%empty%}
+    <h2>...در حال حاضر پلنی موجود نیست</h2>
+    
+    {%endfor%}
+    
+
+                     
+                  </section>
+            
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+<script>
+$('#mailsendbtn').on('click', function(event){
+    $.ajax({
+        url : "verifyemail", // the endpoint
+    });
+    return false
+});</script>
+<script>
+    $('#mobilesendbtn').on('click', function(event){
+        $.ajax({
+            url : "verifymobile", // the endpoint
+        });
+        return false
+    });</script>
+    <script>
+        $('#submit1l').on('click' , () => {
+            $('#submit1').click()
+        })
+        $('#submit2l').on('click' , () => {
+            $('#submit2').click()
+        })
+    </script>
+<script>
+    document.querySelector('#dashbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#dashboard').style.display = 'block'
+    })
+    document.querySelector('#accountbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#account').style.display = 'block'
+    })
+    document.querySelector('#fplanbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#fplans').style.display = 'block'
+    })
+    document.querySelector('#planbtn2').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#fplans').style.display = 'block'
+    })
+    document.querySelector('#transbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#trans').style.display = 'block'
+    })
+    
+    document.querySelector('#transsbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#transs').style.display = 'block'
+    })
+    
+    document.querySelector('#hisbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#hispro').style.display = 'block'
+    })
+    document.querySelector('#histransbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#tarnshistory').style.display = 'block'
+    })
+    document.querySelector('#ticketbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#ticket').style.display = 'block'
+    document.querySelectorAll('.ask').forEach(item =>{
+        item.addEventListener('click', ()=>{ask(item.querySelector('.id').value , item.querySelector('.title').value , item.querySelector('.date').value)
+        })
+    })
+    })
+    document.querySelector('#ticketbtn2').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#ticket').style.display = 'block'
+    document.querySelectorAll('.ask').forEach(item =>{
+        item.addEventListener('click', ()=>{ask(item.querySelector('.id').value , item.querySelector('.title').value , item.querySelector('.date').value)
+        })
+    })
+    })
+    document.querySelector('#idenbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#iden').style.display = 'block'
+    })
+    document.querySelector('#walletssbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#walletss').style.display = 'block'
+    document.querySelector('#amreqp').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#trans').style.display = 'block'
+    })
+    document.querySelectorAll('.amreqn').forEach(item =>{
+        item.addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#transs').style.display = 'block'
+    })
+    })
+    document.querySelectorAll('.amreqp').forEach(item =>{
+        item.addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#trans').style.display = 'block'
+    })
+    })
+    })
+    
+        
+    document.querySelector('#walletbtn2').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#walletss').style.display = 'block'
+    document.querySelector('#amreqp').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#trans').style.display = 'block'
+    })
+    })
+    document.querySelector('#kasb1').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#sm').style.display = 'block'
+    })
+    document.querySelector('#kasb2').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#st').style.display = 'block'
+    })
+    document.querySelector('#kasb3').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#majmooe').style.display = 'block'
+    })
+    document.querySelector('#shopbtn').addEventListener('click', () =>{
+        document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+        sec.style.display = 'none'
+    })
+    document.querySelector('#shop').style.display = 'block'
+    })
+</script>
+ <script>
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            var radius = canvas.height / 2;
+            ctx.translate(radius, radius);
+            radius = radius * 0.90
+            setInterval(drawClock, 1000);
+            function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 4*Math.PI);
+  ctx.fillStyle = '#e6e9eD';
+  ctx.fill();
+  ctx.strokeStyle = '#000012';
+  ctx.lineWidth = radius*0.2;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 4*Math.PI);
+  ctx.fillStyle = '#444';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.16 + "px BYEKAN";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  ctx.fillStyle = 'transparent'
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.strokeStyle= '#444444'
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+        </script>
+        <script type="text/javascript">
+        /*
+    $('.autoplay').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  arrows:false,
+  autoplaySpeed: 1000,
+});
+*/
+  </script>
+
+        <script>
+          function editcur(id , name , address , pic , qr){
+            editor = document.querySelector('#editcurrencies')
+            editor.style.display = 'block'
+            editor.querySelector('.id').value = id
+            editor.querySelector('.name').value = name
+            editor.querySelector('.pic').value = pic
+            editor.querySelector('.address').value = address
+            editor.querySelector('.qr').filename = qr
+          }
+        </script>
+        <script>
+            function ask(subid1 , intitle , indate){
+                 document.querySelector('#main').querySelectorAll('section').forEach(sec => {
+                sec.style.display = 'none'
+            })
+            document.querySelector('#ticketread').style.display = 'block'
+            subid1 = parseInt(subid1)
+            document.querySelector('#subtitle').innerHTML = intitle
+            document.querySelector('#subidans').value = subid1
+            document.querySelector('#subdate').innerHTML = `${indate}:تاریخ ثبت تیکت `
+            document.querySelector('#tickets').innerHTML = ''
+            fetch(`/read/${subid1}`)
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector('#tickets').innerHTML = ''
+                for(item of data){
+                    var a = document.createElement('div')
+                    if(!item[3]){
+                        item[3] = '#'
+                    }
+                    a.innerHTML = ` <div style="text-align: right;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 20px;"><h3>${item[2]}</h3><br> <h4>${item[0]}</h4><br><p>${item[1]}</p><br><br> <a href="${item[3]}">فایل ضمیمه</a></div>`
+                   document.querySelector('#tickets').append(a)
+                   data = ''
+                   response = ''
+                }
+            })
+            
+            }
+        </script>
+        <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+           document.querySelectorAll('.copy').forEach(item=>{
+               item.addEventListener('click' , () =>{
+  var copyText = item.parentElement.querySelector('input');
+  var text = String(item.parentElement.querySelector('input').value)
+
+
+copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  item.parentElement.querySelector('input').value = "!کپی شد"
+  
+    setTimeout(()=>{item.parentElement.querySelector('input').value = text}, 1000)
+
+           })
+        })
+        })
+        </script>
+        <script>
+            document.querySelector('#kasb').addEventListener('click' ,()=>{
+                document.querySelectorAll('.kasbno').forEach(item =>{
+                    item.className = 'kasbyes'
+                    
+                })
+            })
+            
+        </script>
+            <script>
+        document.querySelectorAll('.part').forEach(item =>{
+            item.querySelector('.titleshop').addEventListener('click' , ()=>{
+                document.querySelectorAll('.autoplayshop').forEach(item1 =>{
+                    item1.style.display = "none"
+                })
+                    item.querySelector('.autoplayshop').style.display = "block"
+
+                
+            })
+        })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,129 @@
+hi
+18 20
+month
+19 20
+day
+sleep...
+hi
+21 21
+year
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 257, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 39, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ramabitc/commerce/auctions/management/commands/profit.py", line 47, in <module>
+    if bids.date_field.strftime("%d") == timezone.now().strftime("%d") and bids.date_field.strftime("%m") == timezone.now().strftime("%m") and  bids.date_field + timedelta(months = 11)   < timezone.now():
+NameError: name 'timedelta' is not defined
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 257, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 39, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ramabitc/commerce/auctions/management/commands/profit.py", line 8, in <module>
+    from auctions.models import User , profitlist,  Transactions , Addamountreq, Plans , bid , like ,Cat , comment , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
+ImportError: cannot import name 'like' from 'auctions.models' (/home/ramabitc/commerce/auctions/models.py)
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 257, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 39, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ramabitc/commerce/auctions/management/commands/profit.py", line 8, in <module>
+    from auctions.models import User , profitlist,  Transactions , Addamountreq, Plans , bid , like ,Cat , comment , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
+ImportError: cannot import name 'like' from 'auctions.models' (/home/ramabitc/commerce/auctions/models.py)
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 257, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 39, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ramabitc/commerce/auctions/management/commands/profit.py", line 8, in <module>
+    from auctions.models import User , profitlist,  Transactions , Addamountreq, Plans , bid , like ,Cat , comment , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
+ImportError: cannot import name 'like' from 'auctions.models' (/home/ramabitc/commerce/auctions/models.py)
+Traceback (most recent call last):
+  File "manage.py", line 21, in <module>
+    main()
+  File "manage.py", line 17, in main
+    execute_from_command_line(sys.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 413, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 257, in fetch_command
+    klass = load_command_class(app_name, subcommand)
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib/python3.7/site-packages/django/core/management/__init__.py", line 39, in load_command_class
+    module = import_module('%s.management.commands.%s' % (app_name, name))
+  File "/home/ramabitc/virtualenv/commerce/3.7/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ramabitc/commerce/auctions/management/commands/profit.py", line 8, in <module>
+    from auctions.models import User , profitlist,  Transactions , Addamountreq, Plans , bid , like ,Cat , comment , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
+ImportError: cannot import name 'like' from 'auctions.models' (/home/ramabitc/commerce/auctions/models.py)

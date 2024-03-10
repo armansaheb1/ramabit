@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+
+{% block body%}
+<h1 style="margin: 5%; float: right;">{{list.title}}</h1>
+
+  <div style="clear: both;"></div>
+<div class="container"  style="width: 90%; height: 500px; margin: 0 auto;
+    box-sizing: border-box;background-color: #fafafa;border:1px solid #dcdcdc;border-radius: 10px; word-wrap: break-word;">
+    <img style=";width: 40%; padding: 2.5%;box-sizing: border-box;padding: 60px;" src="/media/{{pic}}">
+<div style="float: left; width:60% ; box-sizing: border-box; padding: 6%">
+    <p style="min-height: 200px;">{{list.des}}</p>
+    <form action="buy" method="POST">
+      {%csrf_token%}
+      <input style="text-align: right; font-size: 14px;" class="form-control" type="number" step=".00001" name="amount" required placeholder="مبلغ سرمایه گذاری"> 
+      <div>
+    <input type="radio"  style="width: 30px;" name="option" value="add" id="months" required>
+    <label for="months">اضافه شدن سود به پلن</label><br>
+    <input type="radio"  style="width: 30px;" name="option" value="wal" id="days" required>
+    <label for="days">اضافه شدن سود به کیف پول</label>
+  </div>
+      <input type="number" value="{{request.user.id}}" name="userid" hidden>
+      <input  type="number" value="{{list.id}}" name="planid" hidden>
+      <input hidden type="submit" id="submit" placeholder="سرمایه گذاری"><br>
+      <label for="submit"><button class="btn btn-info">سرمایه گذاری</button></label>
+  </form>
+
+</div>
+
+</div>
+{%endblock%}

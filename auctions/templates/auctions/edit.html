@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+{%block body%}
+<form style="text-align: center;width:65%;margin:auto;margin-top:120px" action="edit" method="POST">
+
+        
+         {%csrf_token%}
+                            <div>
+                            <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;"  value="{{auc.title}}" type="text" name="title" placeholder="تیتر" required><br>
+                            <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="توضیحات" required>{{auc.des}}</textarea><br>
+                            <input class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" value="{{auc.percent}}" type="number" step="0.01" name="percent" placeholder="درصد سود " required><br>
+                            <input style="text-align: right;padding: 5px;margin: auto;" type="radio" value="year" name="period" id="period" required><label>سالانه</label>
+                            <br>
+                            <input style="text-align: right;padding: 5px;margin: auto;" type="radio" value="half-year" name="period" id="period" required><label>شش ماهه</label>
+                            <br>
+                            <input style="text-align: right;padding: 5px;margin: auto;" type="radio" value="month" name="period" id="period" required><label>ماهانه</label>
+                            <br>
+                            <input  style="text-align: right;padding: 5px;margin: auto;" type="radio" value="day" name="period" id="period" required><label>روزانه</label>
+                            <br>
+                                <br>
+                                <input hidden name="iden" type="number" value="{{request.user.id}}" readonly><br>
+                                <input class="btn btn-info" type="submit">
+                                </div>
+        
+</form>
+<script>
+    document.querySelectorAll('#period').forEach(item =>{
+        if (item.value == '{{auc.period}}'){
+            item.checked = true
+        }
+    })
+</script>
+{%endblock%}

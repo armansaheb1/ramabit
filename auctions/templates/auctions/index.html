@@ -1,0 +1,110 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+<style>
+p{
+    white-space: pre-line
+}
+      .bt{
+    text-align:center;
+    box-sizing: border-box;
+    width: 40%;float: right;
+    background-color: #fafafa;
+     height: 450px; padding: 5%;
+     padding-top:7%
+}
+  .bi{
+  text-align:center;
+  height:500px ; 
+  box-sizing: border-box;
+  width: 60%;float: left; 
+  background-color: #fafafa;
+  height: 100%;
+}
+.article{
+    float: left; width: 30%;box-sizing: border-box;height: 400px;background-color: #fafafa;border:1px solid #dcdcdc;border-radius: 10px;margin-left: 2.5%;margin-bottom: -1px; word-wrap: break-word;margin-bottom: 50px;
+}
+@media screen and (max-width: 1024px) {
+    .bt{
+    text-align:center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+    background-color: #fafafa;
+     height: 450px; 
+     padding-top:7%;
+     float: none;
+}
+  .bi{
+  text-align:center;
+  height:500px ; 
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  background-color: #fafafa;
+  height: 100%;
+  float: none;
+
+  
+}
+.article{
+    float: none; width: 70%;box-sizing: border-box;height: 400px;background-color: #fafafa;border:1px solid #dcdcdc;border-radius: 10px;word-wrap: break-word;margin: auto;margin-bottom: 40px; 
+}
+  }
+</style>
+<div class="single-item" style="margin-bottom: 80px;">
+    {%for item in banner%}
+<div class="banner" style="background:#fafafa">
+    <div class="bi">
+        <img style="width: 70% ;height: 70%;margin:auto;" src="media/{{item.pic}}">
+    </div>
+<div class="bt">
+    <h1 style="font-family: 'BYEKAN', sans-serif;font-size: 40px;font-weight: bold;;">{{item.title}}</h1>
+    <p style="font-weight: bold;white-space: pre-line"> {{item.text}}</p>
+    <a href="/cpanel" class="btn btn-warning" style="background-color: black;color:white; border-style: none;padding: 20px 50px ; border-radius: 20px;font-weight: bold;font-family: 'Almarai', sans-serif;">هم اکنون ثبت نام کنید</a>
+</div>
+
+</div>
+     {%endfor%}
+</div>
+<div style="width: 100%; height: auto; background-color: #ffffff;text-align: center;box-sizing: border-box;padding: 1%;">
+    {%for item in special%}
+   <article class="article">
+<div style="box-sizing: border-box; height: 50%;width: 100%;">
+    <div style="box-sizing: border-box;width: 40%;height:100%;float: right;">
+        <img style="width: 90%;height: 90%;margin: 2%;" src="media/{{item.pic}}">
+        </div>
+    <div style="box-sizing: border-box;width:60%;height:100%;float: right;padding:2%;padding-top: 12%;">
+        <h4 style="margin-top: auto;font-family: 'BYEKAN', sans-serif;font-size: 22px;font-weight: bolder;color: #444;">{{item.title}}</h4>
+        </div>
+</div>
+<div style="box-sizing: border-box; height: 50%;width: 100%;padding: 3%;overflow:hidden; font-family: 'BYEKAN', sans-serif;font-weight: lighter;color: #444;font-size: 18px;text-align: justify;direction: rtl;
+">
+    {{item.text}}
+<div>
+    
+</div>
+</div>
+</article>
+{%endfor%}
+</div>
+<div style="clear:both"></div>
+    {%for item in home%}
+    <hr>
+    <div style="overflow:hidden; width:85% ; margin:auto">
+    <div style="text-align:right;box-sizing: border-box;float: left;width: 70% ;background-color: white;height: 100%;padding: 6%;">
+        <h2>{{item.title}}</h2><br>
+        <p style="font-size:18px"> {{item.text}}</p>
+    </div>
+    <div style="  text-align:center; box-sizing: border-box;width: 30%;float: right; background-color: white;height: 100%;
+    ">
+        <img style="width: 100%;height:100%" src="media/{{item.pic}}">
+        
+    </div>
+    
+    </div>
+    
+    {%endfor%}
+
+{% endblock %}

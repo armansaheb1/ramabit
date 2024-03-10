@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div style="min-height: 300px; text-align: right;box-sizing: border-box; padding: 30px;">
+    <h2>از طرق زیر با {{set.name}}  در ارتباط باشید  </h2><br><br>
+    <h4>  آدرس : {{set.address}}</h4>
+    <h4>{{set.tel}} : تلفن </h4><br>
+
+        <h4>{{set.email}} : ایمیل</h4>
+    <h4>{{set.telegram}} : تلگرام</h4>
+    <h4>{{set.whatsapp}} : واتس اپ</h4>
+    <h4>{{set.instagram}} : اینستاگرام</h4>
+    <h4>{{set.facebook}} : فیسبوک</h4>
+</div>
+{% endblock %}

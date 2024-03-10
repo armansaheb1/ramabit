@@ -1,0 +1,135 @@
+html , body{
+    background-color: #e6e9eD;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'BYEKAN';
+    color: #444444;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    direction: ltr;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #d4d4ff; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #cdcdcd; 
+    width: 80%;
+    border-radius: 4px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #17a2b8; 
+    
+  }
+input{
+    text-align: right;
+}
+a{
+    text-decoration: none;
+    color: #444444;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+#right-sidebar{
+    position: fixed;
+    right: 0;
+    width: 250px;
+    height: 1000px;
+    float: right;
+    background-color:white;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 150px;
+}
+.clock {
+    position: relative;
+    margin: 0 auto;
+    z-index: 5;
+}
+#right-sidebar ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 0;
+    float: right;
+    margin-top: -10px;
+}
+#right-sidebar h5 {
+    position: relative;
+    list-style: none;
+    padding: 15px;
+    width: 100%;
+    float: right;
+    color: #444444;
+    font-family: 'BYEKAN';
+    font-size: 16px;
+}
+#right-sidebar ul li {
+    position: relative;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+    float: right;
+    color: #444444;
+    font-family: 'BYEKAN';
+    font-size: 14px;
+}
+#right-sidebar ul li:hover {
+    background-color: #e6e9eD;
+    border-radius: 50px 50px 50px 50px ;
+}
+#right-sidebar ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: #444444;
+    font-family: 'BYEKAN';
+}
+#main {
+    position: absolute;
+    width: 60%;
+    margin-left: 8%;
+    margin-top: 2%;
+    height: 550px;
+    overflow-y: auto;
+}
+#dashboard{
+    width: 100%;
+    height: 100%;
+}
+.current-info {
+    width: 90%;
+    min-height: 200px;
+    background-color: white;
+    margin: 0 auto;
+}
+.title{
+    text-align: right;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: gainsboro;
+}
+table{
+    direction: rtl;
+    width:100%;
+}
+.logo {
+    position: absolute;
+    height: 120px;
+    width: 150px;
+    right: 40px;
+    background: url(logo.png);
+    background-size: 100% ;
+}

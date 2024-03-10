@@ -1,0 +1,13 @@
+{% extends "auctions/layout.html" %}
+{%block body%}
+<form style="text-align: center;width: 90%; margin: auto; margin-top: 50px;background-color: #fafafd; padding: 20px;padding-top: 70px;" action="edit" method="POST" >
+    {%csrf_token%}
+    <input class="form-control" style="text-align: right; padding: 5px;width: 90%;margin: auto;" type="text" name="title" placeholder="تیتر" required value="{{post.title}}"><br>
+    <textarea class="form-control" style="text-align: right;padding: 5px;width: 90%;margin: auto;" name="des" rows="5" cols="25" placeholder="متن" required>{{post.text}}</textarea><br>
+
+                              <br>
+                              <input hidden name="iden" type="number" value="{{request.user.id}}" readonly><br>
+                              <input class="btn btn-info" type="submit">
+                      </form>    
+
+{%endblock%}

@@ -1,0 +1,362 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://kit.fontawesome.com/cce1ac2aed.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700;800&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cce1ac2aed.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/4.0.0-alpha.1/css/bootstrap-switch.min.css" rel="stylesheet">
+        <link href="{% static 'iransans.css' %}?v=5" rel="stylesheet">   
+        <title>{% block title %}شرکت سرمایه گذاری ....{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'auctions/styles.css' %}?v=5" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+        <style>
+            
+        </style>
+        <style>
+body{
+                font-family:'iransans';
+            }
+.login{
+    box-sizing:border-box;
+    background: #ededcd;
+    width:40%;
+    margin:auto;
+    margin-top:150px;
+    text-align:center;
+}
+.login-form{
+    width:100%;
+    padding:50px;
+}
+.login h2{
+    width:100%;
+    height:60px;
+    background:#ffc107;
+    padding : 10px;
+    text-align:center;
+}
+.bt{
+  text-align:center;box-sizing: border-box;width: 70%;float: left;background-color: white;height: 100%;padding: 6%;
+}
+footer a {
+    font:15px 'BYEKAN';
+}
+.site{
+    min-height:400px;
+}
+
+.topnav {
+    position:fixed;
+    width:100%;
+  overflow: hidden;
+  background-color: white!important;
+  z-index:1;
+}
+.vorood{
+    display:none;
+}
+
+.topnav a {
+  font-family: 'Almarai', sans-serif;
+  float: right;
+  color: #444444;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+   font-family:'BYEKAN';
+   height: 80px;
+   padding-top: 25px;
+   font-family: 'Almarai', sans-serif;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+.img-link{
+    height: 80px;
+    float:right;
+}
+.welcome{
+    margin-top:53px;
+}
+.min-menu{
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: left;
+    display: block;
+  }
+  
+}
+
+@media screen and (max-width: 1024px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .topnav a{
+    height: 80px;;
+  }
+  .min-menu{
+  display: block;
+}
+.max-menu{
+  display: none;
+}
+  .vorood{
+    display:block;
+}
+  .img-link{
+    height: 125px;
+}
+  .topnav a {
+  padding:28px 35px;
+  font-size:30px;
+  text-align:center;
+
+   font-family:'BYEKAN';
+}
+.welcome{
+    margin-top:125px;
+}
+.nav-link{
+    width:100%;
+    text-align:center;
+    float:none;
+}
+.site{
+    min-height:680px;
+}
+
+.first{
+    margin-top:125px;
+}
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+}
+</style>
+<style>
+          .dropbtn {
+            background-color: white;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 160px;
+          }
+          
+          .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+          
+          .dropdown-content {
+            
+            top: 100%;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 2;
+          }
+          
+          .dropdown-content a {
+            font-family: 'Almarai', sans-serif;
+            text-align: center;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+          }
+          
+          .dropdown-content a:hover {background-color: #f1f1f1}
+          
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+          
+          .dropdown:hover .dropbtn {
+            background-color: #cdcdcd;
+          }
+          </style>
+    </head>
+    <body>
+     <div class="topnav" id="myTopnav" style="background:#f3f4f6;position:fixed; top:0" >
+          
+          <a style="padding:0"  href="{% url 'index' %}"><img class="img-link" id="navlogo"  src="{%url 'index'%}media/{{set.logo}}"></a>
+          
+                
+                
+            <a style="text-align:center;height: 140px;" href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars fa-2x"></i></a>
+    
+    
+    {% if user.is_authenticated %}
+    {% else %}
+          <button style="position: absolute;top:40px;float:left ; left:150px" class="vorood btn btn-success"><a style="margin:0;padding:0;color:white;font-size:18px; height: 40px;" href="/register">ثبت نام</a></button>
+          <button style="position: absolute;top:40px;float:left ; left:250px" class="vorood btn btn-primary"><a style="margin:0;padding:0;color:white;font-size:18px;height: 40px;" href="/login">ورود </a></button>
+           
+           {% endif %}
+           
+           <a class="first" href="{% url 'index' %}">خانه</a>
+            
+            <a class="nav-link" href="{% url 'plans' %}">پلن های سرمایه گذاری</a>
+                <a class="nav-link" href="{% url 'blog' %}">بلاگ</a>
+            
+                <a class="nav-link" href="{% url 'contact' %}">ارتباط با ما</a>
+
+                {% if user.is_superuser %}
+            
+            
+            
+                <a class="nav-link min-menu" href="{% url 'adminpanel' %}"> ورود به صفحه مدیریت </a>
+                
+                
+                
+            {% endif %}
+            
+            
+            {% if user.is_authenticated %}
+            
+            <a class="nav-link min-menu" href="{% url 'cpanel' %}">صفحه مدیریت حساب</a>
+            
+            
+            <a class="nav-link min-menu" href="{% url 'logout' %}">خروج</a>
+                
+                    
+                    
+                    
+                    
+            {% else %}
+            
+            
+            
+                    <a class="nav-link min-menu" href="{% url 'login' %}">ناحیه کاربری</a>
+                    <a class="nav-link min-menu" href="{% url 'register' %}">ثبت نام</a>
+                    
+                    
+                    
+            {% endif %}
+                
+                
+    
+    
+
+<div style="left:0;position: fixed;" class="dropdown max-menu">
+  <a style="float: left;" class="dropbtn"><h5>{{ user.name }} {{ user.lastname }}  <i  class="fas fa-user "></i>    </h5></a>
+  <div class="dropdown-content">
+    {% if user.is_superuser %}
+            
+            
+            
+    <a class="nav-link" href="{% url 'adminpanel' %}"> ورود به صفحه مدیریت </a>
+    
+    
+    
+{% endif %}
+
+
+{% if user.is_authenticated %}
+
+<a class="nav-link" href="{% url 'cpanel' %}">صفحه مدیریت حساب</a>
+
+
+<a class="nav-link" href="{% url 'logout' %}">خروج</a>
+    
+        
+        
+        
+        
+{% else %}
+
+
+
+        <a class="nav-link" href="{% url 'login' %}">ناحیه کاربری</a>
+        <a class="nav-link" href="{% url 'register' %}">ثبت نام</a>
+        
+        
+        
+{% endif %}
+  </div>
+</div>
+            
+            
+            
+    </div>
+
+
+    <div class="site">
+      <div class="login">
+    <h2 style="font-family: 'Almarai', sans-serif;">ورود</h2>
+    <div class="login-form">
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'forgetreq' %}" method="POST">
+        {% csrf_token %}
+       <div class="form-group">
+            <input autofocus class="form-control" type="text" name="email" placeholder="ایمیل " style="text-align:center">
+        </div>
+        <input class="btn btn-warning" type="submit" value="ورود" style="width:30%;  ; text-align:center">
+    </form><br>
+
+</div>
+</div>
+</div>
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-switch@3.3.4/dist/js/bootstrap-switch.min.js"></script>
+    
+    <script>
+        $('.single-item').slick({
+            autoplay:false,
+            arrows: false,
+            dots:false,
+        });
+    </script>
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+    </body>
+</html>

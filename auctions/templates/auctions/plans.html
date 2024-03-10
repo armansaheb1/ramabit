@@ -1,0 +1,69 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<style>
+    .title{
+    text-align: right;
+    width: 80%;
+    margin:auto;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #ffc107;
+    text-align:right;
+    margin-top:30px;
+}
+a{
+color:#444;
+text-decoration:none;
+}
+a:hover{
+color:#444;
+}
+</style>
+<br>
+    <h1 style="width: 100%;text-align: center;margin-top:50px;margin-bottom:50px;">پلن های سرمایه گذاری</h1>
+{%for cat in plans %}
+<div class="part" id="{{cat.1}}">
+                    <a href="#{{cat.1}}">
+                    <div class="title" >{{cat.1}} <img style="position:relative;width: 3%; float:none;" src="media/{{cat.2}}"></div>
+                    </a>
+                    
+                    <div class="autoplay" style="width: 80%;margin: auto;height:auto;overflow-y:hidden;background:#fafafd;display:none;padding-top:30px">
+                        {%for item in cat.0%}
+                        <a href="/listing/{{item.id}}">
+                         <div style="background-color: #f5f5fd;  height: 350px;width:30%; margin: 1.5%;border:1px solid #dcdcdc;border-radius: 10px;float:right;text-align:center">
+                        <img style="position:relative;width: 20%; margin-top: 20px;float:none" src="media/{{cat.2}}">
+                        <h5 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{item.title}}</h5>
+                        <p>{{item.des}}</p>
+                        <h6 style="margin: auto; margin-top: 20px;text-align: center;font-family:'calibri';">{{item.percent}}:سود</h6>
+                        </div>
+                        </a>
+                        
+                        
+                        
+                        
+                        {%empty%}
+    <h2>...در حال حاضر پلنی موجود نیست</h2>
+    
+    {%endfor%}
+    
+                       </div> </div>
+     {%empty%}
+    <h2>...در حال حاضر پلنی موجود نیست</h2>
+    
+    {%endfor%}
+    
+    <script>
+        document.querySelectorAll('.part').forEach(item =>{
+            item.querySelector('.title').addEventListener('click' , ()=>{
+                document.querySelectorAll('.autoplay').forEach(item1 =>{
+                    item1.style.display = "none"
+                })
+                    item.querySelector('.autoplay').style.display = "block"
+
+                
+            })
+        })
+    </script>
+   {% endblock %}
