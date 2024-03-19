@@ -5,6 +5,7 @@ from django.shortcuts import render , redirect
 from django.urls import reverse
 from .models import Forget, Job, pages , bazdid , Tickets,Subjects, Askamountreq, profitlist , settings , post , User ,  Transactions , Addamountreq, Plans , bid  ,Cat  , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
 from django.core.mail import send_mail
+from django.contrib.auth.models import User
 import json
 import time
 import os
@@ -15,7 +16,6 @@ from random import randrange
 from django.http import JsonResponse
 from django.utils import timezone
 from django.core import management
-from background_task import background
 from datetime import timedelta
 from ippanel import Client
 from django.contrib.auth.hashers import make_password
@@ -326,9 +326,9 @@ def cpanel(request):
     for cur in currencies.objects.all():
         if(len(wallet.objects.filter(user = request.user.id , curid= cur.id))>0):
             wal = wallet.objects.get(user = request.user.id , curid= cur.id)
-            wa.append([cur.pic , wal.amount , cur.brand,cur.id])
+            wa.append([cur.get_image() , wal.amount , cur.brand,cur.id])
         else:
-            wa.append([cur.pic , 0 , cur.brand , cur.id] )
+            wa.append([cur.get_image() , 0 , cur.brand , cur.id] )
             
             
     transaction = Transactions.objects.filter(userid = request.user.id)
