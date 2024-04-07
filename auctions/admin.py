@@ -1,8 +1,12 @@
 from django.contrib import admin
 
-from .models import Job , pages, bazdid , Subjects ,Tickets, profitlist , settings ,  post ,  bid, Transactions, Addamountreq, Askamountreq , currencies ,  User , Plans , Cat  , wallet ,Verify , Adminverifymelli , Adminverifybank, General
+from .models import Job , pages, bazdid , Subjects ,Tickets, profitlist , settings ,  post ,  bid, Transactions, Addamountreq, Askamountreq , currencies ,  User , Plans , Cat  , wallet ,Verify , Adminverifymelli , Adminverifybank, General, Miners
 # Register your models here.
-admin.site.register(User)
+
+class UserAdmin(admin.ModelAdmin):
+    search_fields = ['username']
+
+admin.site.register(User, UserAdmin)
 admin.site.register(Plans)
 admin.site.register(wallet)
 admin.site.register(Verify)
@@ -22,3 +26,4 @@ admin.site.register(bazdid)
 admin.site.register(pages)
 admin.site.register(Job)
 admin.site.register(General)
+admin.site.register(Miners)

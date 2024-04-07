@@ -39,6 +39,7 @@ class CurrencySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.currencies
         fields = (
+            "id",
             "name",
             "brand",
             "pic",
@@ -47,7 +48,6 @@ class CurrencySerializer(serializers.ModelSerializer):
             "get_image",
             "get_qr",
         )
-        extra_fields = ["get_image"]
 
 
 class CurrencyImageSerializer(serializers.ModelSerializer):
@@ -59,4 +59,28 @@ class CurrencyImageSerializer(serializers.ModelSerializer):
 class PlansSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Plans
+        fields = "__all__"
+
+class MinersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Miners
+        fields = (
+        "id",
+        "title",
+        "pic",
+        "cur",
+        "des",
+        "rate",
+        "period",
+        "get_pic",
+        "get_cur_pic",
+        "price",
+        "profit",
+        "get_cur"
+        )
+
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.post
         fields = "__all__"

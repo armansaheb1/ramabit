@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import mimetypes
 
-ROOT = "http://127.0.0.1:8000"
+ROOT = "http://www.ryanai.ir"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -51,6 +51,12 @@ INSTALLED_APPS = [
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "https://www.ryanai.ir",
+    "https://ryanai.ir",
+]
 
 
 MIDDLEWARE = [
@@ -102,7 +108,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "ramabit",
+        "NAME": "myproject3",
         "USER": "myprojectuser",
         "PASSWORD": "password",
         "HOST": "localhost",
@@ -174,3 +180,23 @@ AZ_IRANIAN_BANK_GATEWAYS = {
 CELERY_TIMEZONE = "Australia/Tasmania"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": "debug.log",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
+        },
+    },
+}
