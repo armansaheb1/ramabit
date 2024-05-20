@@ -12,9 +12,17 @@ from datetime import timedelta , datetime
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        for item in Job.objects.all():
-            if len(User.objects.filter(id = item.userid)):
-                item.use = User.objects.get(id = item.userid)
+        
+        for item in profitlist.objects.all():
+
+            '''
+            if len(currencies.objects.filter(pk = item.curid)):
+                print(item)
+                item.currency = currencies.objects.get(pk = item.curid)
                 item.save()
-            else:
-                item.delete()
+            '''
+
+            if len(Plans.objects.filter(pk = item.planid)):
+                print('hi')
+                item.plan = Plans.objects.get(pk = item.planid)
+                item.save()

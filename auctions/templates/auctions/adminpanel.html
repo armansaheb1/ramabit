@@ -223,7 +223,7 @@ table{
                     <div class="autoplay" style="width: 95%;margin: auto;">
                     {%for item in cur %}
                         <div style="background-color: #f5f5fd;  height: 100%; margin: 5px;">
-                        <img style="width: 60%; margin: auto; margin-top: 20px;" src="media/{{item.pic}}">
+                        <img style="width: 60%; margin: auto; margin-top: 20px;" src="{{item.get_image}}">
                         <h5 style="margin: auto; margin-top: 20px;text-align: center;"></h5>
                         </div>
                         {%empty%}

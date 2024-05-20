@@ -3,25 +3,21 @@ from django.db import models
 from django.utils import timezone
 import uuid
 from commerce.settings import ROOT
-
+from ckeditor.fields import RichTextField
 
 class bazdid(models.Model):
     date = models.DateField(default=timezone.now)
-    count = models.IntegerField()
+    count = models.IntegerField(null=True)
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, date_of_birth, password=None):
-        """
-        Creates and saves a User with the given email, date of
-        birth and password.
-        """
-        if not email:
-            raise ValueError("Users must have an email address")
+    def create_user(self,username, mobile,name,lastname, password=None):
 
         user = self.model(
-            email=self.normalize_email(email),
-            date_of_birth=date_of_birth,
+            mobile = mobile,
+            username = username,
+            name = name,
+            lastname = lastname
         )
 
         user.set_password(password)
@@ -49,6 +45,7 @@ class User(AbstractUser):
     ref = models.CharField(
         default=uuid.uuid4, unique=True, max_length=100, verbose_name="REF"
     )
+    username = models.CharField(max_length=100, null=True, unique=True)
     inv = models.CharField(max_length=100, null=True)
     name = models.CharField(max_length=100, null=True, verbose_name="نام")
     lastname = models.CharField(max_length=100, null=True, verbose_name="نام خانوادگی")
@@ -83,9 +80,8 @@ class currencies(models.Model):
 
 
 class wallet(models.Model):
-    user = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    curid = models.IntegerField(null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
     amount = models.FloatField(default=0)
 
 
@@ -96,12 +92,15 @@ class wallet(models.Model):
 
 class Plans(models.Model):
     title = models.CharField(max_length=100)
-    cur = models.IntegerField(null=True)
+    currency = models.ForeignKey(currencies, on_delete= models.CASCADE, null=True)
     des = models.TextField(max_length=10000)
     percent = models.FloatField(null=True)
     mini = models.FloatField(null=True)
     maxi = models.FloatField(null=True)
     period = models.CharField(null=True, max_length=100)
+
+    def get_cur(self):
+        return self.currency.brand
 
     def __str__(self):
         return f"{self.title} ({self.id})"
@@ -111,7 +110,7 @@ class Plans(models.Model):
 class Miners(models.Model):
     title = models.CharField(max_length=100)
     pic = models.ImageField(upload_to="miner")
-    cur = models.ForeignKey(currencies, on_delete= models.CASCADE)
+    currency = models.ForeignKey(currencies, on_delete= models.CASCADE)
     des = models.TextField(max_length=10000)
     rate = models.FloatField(null=True)
     period = models.CharField(null=True, max_length=100)
@@ -125,22 +124,51 @@ class Miners(models.Model):
         return  ROOT + '/media/' + self.pic.name
 
     def get_cur_pic(self):
-        return  ROOT + '/media/' + self.cur.pic.name
+        return  ROOT + '/media/' + self.currency.pic.name
     
     def get_cur(self):
-        return  self.cur.brand
+        return  self.currency.brand
+
+
+class Product(models.Model):
+    title = models.CharField(max_length=100)
+    pic = models.ImageField(upload_to="miner")
+    des = models.TextField(max_length=10000)
+    price = models.FloatField( default = 0)
+
+    def __str__(self):
+        return f"{self.title} ({self.id})"
+
+    def get_image(self):
+        return  ROOT + '/media/' + self.pic.name
+
+
+class ProductOrder(models.Model):
+    firs_name = models.CharField(max_length=100)
+    last_name = models.ImageField(upload_to="products")
+    address = models.TextField(max_length=10000)
+    postal_code = models.TextField(max_length=10)
+
+    def __str__(self):
+        return f"{self.title} ({self.id})"
+
+    def get_pic(self):
+        return  ROOT + '/media/' + self.pic.name
+
 
 
 class bid(models.Model):
-    planid = models.IntegerField()
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    plan = models.ForeignKey(Plans, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     deposit = models.FloatField()
     option = models.CharField(max_length=100, null=True)
     date_field = models.DateField(default=timezone.now)
 
+    def get_image(self):
+        return self.plan.currency.get_image()
+
     def __str__(self):
-        return f"{self.userid}   ,   {self.planid}   ,   {self.deposit}   ,   {self.date_field}"
+        return f"{self.user}   ,   {self.plan}   ,   {self.deposit}   ,   {self.date_field}"
 
 
 class Cat(models.Model):
@@ -159,8 +187,7 @@ class act(models.Model):
 
 
 class Verify(models.Model):
-    userid = models.IntegerField(null=True)
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     mobilev = models.BooleanField(default=False, null=True)
     mobilec = models.IntegerField(null=True)
     emailv = models.BooleanField(default=False, null=True)
@@ -170,33 +197,37 @@ class Verify(models.Model):
 
 
 class Adminverifymelli(models.Model):
-    userid = models.IntegerField(null=True)
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     melliimg = models.ImageField(upload_to="melli", null=True)
     mellic = models.IntegerField(null=True)
     action = models.BooleanField(default=False)
 
+    def get_image(self):
+        return  ROOT + '/media/' + self.melliimg.name
+
 
 class Adminverifybank(models.Model):
-    userid = models.IntegerField(null=True)
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     bankimg = models.ImageField(upload_to="bank", null=True)
     bankc = models.IntegerField(null=True)
     action = models.BooleanField(default=False)
 
+    def get_image(self):
+        return  ROOT + '/media/' + self.bankimg.name
+
 
 class Addamountreq(models.Model):
-    curid = models.IntegerField()
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     amount = models.FloatField()
     link = models.CharField(max_length=1000, null=True)
 
 
 class Askamountreq(models.Model):
-    curid = models.IntegerField()
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     amount = models.FloatField()
     link = models.CharField(max_length=1000, null=True)
 
@@ -204,10 +235,10 @@ class Askamountreq(models.Model):
 class Transactions(models.Model):
     date = models.DateField(default=timezone.now)
     amount = models.FloatField()
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    curid = models.IntegerField()
-    act = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
+    act = models.IntegerField(null=True)
 
 
 class blog(models.Model):
@@ -223,6 +254,34 @@ class post(models.Model):
     text = models.CharField(max_length=10000)
     pic = models.ImageField(upload_to="blog")
     place = models.CharField(default="normal", max_length=100)
+    app = models.BooleanField(default=False)
+    index = models.BooleanField(default=False)
+
+    def get_image(self):
+        return  ROOT + '/media/' + self.pic.name
+
+
+class News(models.Model):
+    date = models.DateField(default=timezone.now)
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length=10000)
+    pic = models.ImageField(upload_to="blog")
+    place = models.CharField(default="normal", max_length=100)
+
+    def get_image(self):
+        return  ROOT + '/media/' + self.pic.name
+
+
+class Banner(models.Model):
+    title = models.CharField(max_length=100)
+    pic = models.ImageField(upload_to="blog")
+
+    def get_image(self):
+        return  ROOT + '/media/' + self.pic.name
+
+
+
+
 
 
 class settings(models.Model):
@@ -243,22 +302,21 @@ class settings(models.Model):
 
 class profitlist(models.Model):
     date = models.DateField(default=timezone.now)
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    curid = models.IntegerField(null=True)
-    planid = models.IntegerField(null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
+    plan = models.ForeignKey(Plans, on_delete=models.CASCADE, null=True)
     invid = models.IntegerField(null=True, blank=True)
     amount = models.FloatField()
 
     def __str__(self):
-        return f"{self.userid}{self.invid}"
+        return f"{self.user}{self.invid}"
 
 
 class Subjects(models.Model):
     date = models.DateField(default=timezone.now)
     lastdate = models.DateField(default=timezone.now)
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     act = models.IntegerField(null=True, default=0)
     read = models.BooleanField(default=True)
     title = models.CharField(max_length=100)
@@ -267,24 +325,34 @@ class Subjects(models.Model):
 
 class Tickets(models.Model):
     date = models.DateField(default=timezone.now)
-    subid = models.IntegerField()
+    subid = models.IntegerField(null=True)
     text = models.CharField(max_length=1000)
     pic = models.ImageField(upload_to="ticket", null=True)
     sender = models.IntegerField(default=0)
 
 
 class pages(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     title = models.CharField(max_length=100)
-    text = models.CharField(max_length=10000)
+    text = RichTextField()
+
+    def __str__(self):
+        return self.name
+
+class Details(models.Model):
+    page = models.CharField(max_length=100, unique=True)
+    title = models.CharField(max_length=100)
+    text = RichTextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Job(models.Model):
     title = models.CharField(max_length=100)
     text = models.CharField(max_length=10000)
     job = models.CharField(max_length=10000, null=True)
-    userid = models.IntegerField()
-    use = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     username = models.CharField(max_length=100)
 
 
@@ -297,3 +365,25 @@ class General(models.Model):
     title = models.CharField(max_length=300)
     banner_title = models.CharField(max_length=100)
     banner_text = models.CharField(max_length=300)
+
+
+class RentedMiner(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    miner = models.ForeignKey(Miners, on_delete=models.CASCADE, null=True)
+    start_date = models.DateTimeField(auto_now_add=True, editable =True)
+    last_check = models.DateTimeField(auto_now=True)
+    paid = models.FloatField(null=True, default = 0)
+    done = models.BooleanField(default = False)
+
+    def get_image(self):
+        return self.miner.get_pic()
+
+
+
+class Elan(models.Model):
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length = 1000)
+    pic = models.ImageField(upload_to="blog")
+
+    def get_image(self):
+        return  ROOT + '/media/' + self.pic.name

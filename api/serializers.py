@@ -34,6 +34,34 @@ class PagesSerializer(serializers.ModelSerializer):
         model = models.pages
         fields = "__all__"
 
+class RentedMinerSerializer(serializers.ModelSerializer):
+    class Meta:
+        depth = 2
+        model = models.RentedMiner
+        fields = (
+            "id",
+            "paid",
+            "user",
+            "miner",
+            "start_date",
+            "last_check",
+            "get_image"
+        )
+
+class BidSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.bid
+        depth = 2
+        fields = (
+            "id",
+            "plan", 
+            "user",
+            "deposit",
+            "option",
+            "date_field",
+            "get_image"
+        )
+
 
 class CurrencySerializer(serializers.ModelSerializer):
     class Meta:
@@ -64,11 +92,12 @@ class PlansSerializer(serializers.ModelSerializer):
 class MinersSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Miners
+        depth = 1
         fields = (
         "id",
         "title",
         "pic",
-        "cur",
+        "currency",
         "des",
         "rate",
         "period",
@@ -83,4 +112,46 @@ class MinersSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.post
-        fields = "__all__"
+        fields = (
+            "date", 
+    "title",
+    "text",
+    "pic",
+    "place",
+    "get_image"
+        )
+
+        
+class NewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.News
+        fields = (
+            "id",
+            "date", 
+    "title",
+    "text",
+    "pic",
+    "place",
+    "get_image"
+        )
+
+
+class BannerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Banner
+        fields = (
+            "id",
+    "title",
+    "get_image"
+        )
+
+
+class ElanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Elan
+        fields = (
+            "id",
+            "title",
+            "text",
+            "get_image"
+        )

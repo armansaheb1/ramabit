@@ -1,4 +1,4 @@
-Internal Server Error: /api/v1/miners/BTC
+Internal Server Error: /api/v1/pages/aboutus
 Traceback (most recent call last):
   File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -16,8 +16,16 @@ Traceback (most recent call last):
     raise exc
   File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
-TypeError: MinersPic.get() got an unexpected keyword argument 'id'
-Internal Server Error: /api/v1/miners/BTC
+  File "/Ramabit-Back/api/views.py", line 179, in get
+    return Response(serializer.data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+TypeError: 'pages' object is not iterable
+Internal Server Error: /api/v1/pages/aboutus
 Traceback (most recent call last):
   File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -35,4 +43,1939 @@ Traceback (most recent call last):
     raise exc
   File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
-TypeError: MinersPic.get() got an unexpected keyword argument 'id'
+  File "/Ramabit-Back/api/views.py", line 179, in get
+    return Response(serializer.data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `user` is not valid for model `pages` in `api.serializers.PagesSerializer`.
+Internal Server Error: /api/v1/pages/aboutus
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 179, in get
+    return Response(serializer.data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 571, in data
+    ret = super().data
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `user` is not valid for model `pages` in `api.serializers.PagesSerializer`.
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 61, in post
+    user, _ = ChatUser.objects.get_or_create(mobile = request.data['mobile'])
+KeyError: 'mobile'
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 61, in post
+    user, _ = ChatUser.objects.get_or_create(mobile = request.user.mobile)
+AttributeError: 'AnonymousUser' object has no attribute 'mobile'
+Internal Server Error: /api/v1/pages/contactus
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 177, in get
+    query = models.pages.objects.get(name = brand)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+auctions.models.pages.DoesNotExist: pages matching query does not exist.
+Internal Server Error: /api/v1/pages/contactus
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 177, in get
+    query = models.pages.objects.get(name = brand)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+auctions.models.pages.DoesNotExist: pages matching query does not exist.
+Internal Server Error: /api/v1/pages/contactus
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 177, in get
+    query = models.pages.objects.get(name = brand)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+auctions.models.pages.DoesNotExist: pages matching query does not exist.
+Internal Server Error: /api/v1/pages/contactus
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 177, in get
+    query = models.pages.objects.get(name = brand)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+auctions.models.pages.DoesNotExist: pages matching query does not exist.
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 103, in render
+    'value': conditional_escape(force_text(value)),
+NameError: name 'force_text' is not defined
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 108, in render
+    return mark_safe(renderer.render('ckeditor5/widget.html', context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 28, in render
+    template = self.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 34, in get_template
+    return self.engine.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 35, in get_template
+    reraise(exc, self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 108, in render
+    return mark_safe(renderer.render('ckeditor5/widget.html', context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 28, in render
+    template = self.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 34, in get_template
+    return self.engine.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 35, in get_template
+    reraise(exc, self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 108, in render
+    return mark_safe(renderer.render('ckeditor5/widget.html', context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 28, in render
+    template = self.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 34, in get_template
+    return self.engine.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 35, in get_template
+    reraise(exc, self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 108, in render
+    return mark_safe(renderer.render('ckeditor5/widget.html', context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 28, in render
+    template = self.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 34, in get_template
+    return self.engine.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 35, in get_template
+    reraise(exc, self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 108, in render
+    return mark_safe(renderer.render('ckeditor5/widget.html', context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 28, in render
+    template = self.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 34, in get_template
+    return self.engine.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 35, in get_template
+    reraise(exc, self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+Internal Server Error: /admin/auctions/pages/14/change/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/defaulttags.py", line 326, in render
+    return nodelist.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1065, in render
+    return render_value_in_context(output, context)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/base.py", line 1042, in render_value_in_context
+    value = str(value)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/utils.py", line 79, in __str__
+    return self.as_widget()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/boundfield.py", line 108, in as_widget
+    return widget.render(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/ckeditor5/widgets.py", line 108, in render
+    return mark_safe(renderer.render('ckeditor5/widget.html', context))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 28, in render
+    template = self.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/forms/renderers.py", line 34, in get_template
+    return self.engine.get_template(template_name)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 35, in get_template
+    reraise(exc, self)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: ckeditor5/widget.html
+Internal Server Error: /api/v1/admin/page
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 828, in get
+    return Response(serializer.data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `user` is not valid for model `pages` in `admin.serializers.PagesSerializer`.
+Internal Server Error: /api/v1/admin/page
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 828, in get
+    return Response(serializer.data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `user` is not valid for model `pages` in `admin.serializers.PagesSerializer`.
+Internal Server Error: /api/v1/admin/post/13
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 730, in get
+    query = models.post.objects.get(id = id)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+auctions.models.post.DoesNotExist: post matching query does not exist.
+Internal Server Error: /api/v1/admin/page/13
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'des'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 842, in put
+    auc.des = request.data['des']
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'des'
+Internal Server Error: /api/v1/admin/page/13
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'des'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 842, in put
+    auc.des = request.data['des']
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'des'
+Internal Server Error: /api/v1/admin/page/13
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'des'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 842, in put
+    auc.des = request.data['des']
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'des'
+Internal Server Error: /api/v1/admin/page/13
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'des'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/admin/views.py", line 842, in put
+    auc.des = request.data['des']
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'des'
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 61, in post
+    user, _ = ChatUser.objects.get_or_create(mobile = request.user.mobile, name=request.user.username)
+AttributeError: 'AnonymousUser' object has no attribute 'mobile'
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 61, in post
+    user, _ = ChatUser.objects.get_or_create(mobile = request.user.mobile, name=request.user.username)
+AttributeError: 'AnonymousUser' object has no attribute 'mobile'
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 61, in post
+    user, _ = ChatUser.objects.get_or_create(mobile = request.user.mobile, name=request.user.username)
+AttributeError: 'AnonymousUser' object has no attribute 'mobile'
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 66, in post
+    user, _ = ChatUser.objects.get_or_create(username = request.data['mobile'], name = request.data['name'])
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'username' into field. Choices are: chats1, chats2, chatsession, chatsessionmessage, chattexts, id, mobile, name
+Internal Server Error: /api/v1/chats/user
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 66, in post
+    user, _ = ChatUser.objects.get_or_create(mobile = request.data['mobile'], name = request.data['name'])
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 948, in get_or_create
+    return self.get(**kwargs), False
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 635, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'username' into field. Choices are: chats1, chats2, chatsession, chatsessionmessage, chattexts, id, mobile, name
+Internal Server Error: /api/v1/chats/undefined/messages/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 26, in get
+    chat_session = ChatSession.objects.get(uri=uri)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+chat.models.ChatSession.DoesNotExist: ChatSession matching query does not exist.
+Internal Server Error: /api/v1/chats/undefined/messages/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/chat/views.py", line 26, in get
+    chat_session = ChatSession.objects.get(uri=uri)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+chat.models.ChatSession.DoesNotExist: ChatSession matching query does not exist.
+Internal Server Error: /api/v1/users
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to www.ryanai.ir/api/v1/users/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /api/v1/users/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/views.py", line 132, in perform_create
+    user = serializer.save(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 40, in create
+    user = self.perform_create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 48, in perform_create
+    user = User.objects.create_user(**validated_data)
+TypeError: MyUserManager.create_user() got an unexpected keyword argument 'mobile'
+Internal Server Error: /api/v1/users/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/views.py", line 132, in perform_create
+    user = serializer.save(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 40, in create
+    user = self.perform_create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 48, in perform_create
+    user = User.objects.create_user(**validated_data)
+TypeError: MyUserManager.create_user() got an unexpected keyword argument 'username'
+Internal Server Error: /api/v1/users/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/views.py", line 132, in perform_create
+    user = serializer.save(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 40, in create
+    user = self.perform_create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 48, in perform_create
+    user = User.objects.create_user(**validated_data)
+TypeError: MyUserManager.create_user() got an unexpected keyword argument 'username'
+Internal Server Error: /api/v1/users/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/views.py", line 132, in perform_create
+    user = serializer.save(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 40, in create
+    user = self.perform_create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 48, in perform_create
+    user = User.objects.create_user(**validated_data)
+TypeError: MyUserManager.create_user() missing 2 required positional arguments: 'email' and 'date_of_birth'
+Internal Server Error: /api/v1/users/
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 21, in create
+    self.perform_create(serializer)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/views.py", line 132, in perform_create
+    user = serializer.save(*args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 40, in create
+    user = self.perform_create(validated_data)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/djoser/serializers.py", line 48, in perform_create
+    user = User.objects.create_user(**validated_data)
+TypeError: MyUserManager.create_user() got an unexpected keyword argument 'name'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+TypeError: MinersPic.get() missing 1 required positional argument: 'brand'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 165, in get
+    query = models.Miners.objects.all(id=id)
+TypeError: BaseManager.all() got an unexpected keyword argument 'id'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 165, in get
+    query = models.Miners.objects.all(id=id)
+TypeError: BaseManager.all() got an unexpected keyword argument 'id'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 165, in get
+    query = models.Miners.objects.all(id=id)
+TypeError: BaseManager.all() got an unexpected keyword argument 'id'
+Internal Server Error: /api/v1/miners
+Traceback (most recent call last):
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Ramabit-Back/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Ramabit-Back/api/views.py", line 165, in get
+    query = models.Miners.objects.all(id=id)
+TypeError: BaseManager.all() got an unexpected keyword argument 'id'

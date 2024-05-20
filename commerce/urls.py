@@ -10,5 +10,7 @@ urlpatterns = [
     path('api/v1/', include('djoser.urls')),
     path('api/v1/', include('djoser.urls.authtoken')),
     path("old/", include("auctions.urls")),
+    path("api/v1/", include("chat.urls")),
     path("api/v1/", include("api.urls")),
+    path("api/v1/admin/", include("admin.urls")),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
