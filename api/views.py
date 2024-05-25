@@ -152,6 +152,13 @@ class PlansIndex(APIView):
         serializer = serializers.PlansSerializer(query, many=True)
         return Response(serializer.data)
 
+class OnePlan(APIView):
+    def get(self, request, id):
+        query = models.Plans.objects.get(id = id)
+        serializer = serializers.PlansSerializer(query)
+        return Response(serializer.data)
+
+
 class MinersByCurrencies(APIView):
     def get(self, request, id=None):
         query = models.currencies.objects.get(id=id)
@@ -160,14 +167,24 @@ class MinersByCurrencies(APIView):
         return Response(serializer.data)
     
 class MinersPic(APIView):
-    def get(self, request, brand=None):
-        if not brand :
-            query = models.Miners.objects.all()
+    def get(self, request, brand=None, period=None, id=None):
+        if brand :
+            query = models.Miners.objects.filter(currency = models.currencies.objects.get(brand = brand))
             serializer = serializers.MinersSerializer(query, many=True)
             return Response(serializer.data)
-        query = models.Miners.objects.filter(currency = models.currencies.objects.get(brand = brand))
+        if period :
+            query = models.Miners.objects.filter(period = int(period))
+            serializer = serializers.MinersSerializer(query, many=True)
+            return Response(serializer.data)
+        if id :
+            query = models.Miners.objects.get(id = id)
+            serializer = serializers.MinersSerializer(query)
+            return Response(serializer.data)
+                
+        query = models.Miners.objects.all()
         serializer = serializers.MinersSerializer(query, many=True)
         return Response(serializer.data)
+    
 
 
 class Miners(APIView):
@@ -370,9 +387,9 @@ class BuyPlan(APIView):
             else:
                 return Response(" دارایی کیف پول مربوط به این پلن کافی نیست لطفا کیف پول خود را شارژ کنید",status=400)
         else:
-            wal = models.wallet(user = request.user , currency = cur , amount = 0)
+            wal = models.wallet(user = request.user , currency = plan.currency , amount = 0)
             wal.save()
-            return render(" دارایی کیف پول مربوط به این پلن کافی نیست لطفا کیف پول خود را شارژ کنید",
+            return Response(" دارایی کیف پول مربوط به این پلن کافی نیست لطفا کیف پول خود را شارژ کنید",
                 status=400)
 
 
@@ -385,7 +402,7 @@ class Plan(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        query = models.bid.objects.filter(user= request.user)
+        query = models.bid.objects.filter(user= request.user).order_by('-id')
         serializer = serializers.BidSerializer(query, many=True)
         return Response(serializer.data)
 
@@ -412,7 +429,8 @@ class closeplan(APIView):
             
         query = models.bid.objects.filter(user= request.user)
         serializer = serializers.BidSerializer(query, many=True)
-        return Response(serializer.data)
+        return Response("پلن با موفقیت بسته شد",status = 200
+             )
 
 class RentMiner(APIView):
     authentication_classes = [
@@ -428,6 +446,26 @@ class RentMiner(APIView):
             wallet.amount = wallet.amount - miner.price
             models.RentedMiner.objects.create(miner = miner ,user = request.user)
             return Response()
+        else:
+            return Response("ابتدا حساب تتر خود را شارژ کنید",status = 400
+             )
+
+class RentMiners(APIView):
+    authentication_classes = [
+        SessionAuthentication,
+        BasicAuthentication,
+        TokenAuthentication,
+    ]
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        miner = models.Miners.objects.get(id = int(request.data['miner']))
+        amount = int(request.data['amount'])
+        wallet, _ = models.wallet.objects.get_or_create(user = request.user, currency = models.currencies.objects.get(brand = 'USDT'))
+        if miner.price * amount <= wallet.amount:
+            for _ in range(amount):
+                wallet.amount = wallet.amount - miner.price
+                models.RentedMiner.objects.create(miner = miner ,user = request.user)
+            return Response('اجاره ی ماینر با موفقیت انجام شد')
         else:
             return Response("ابتدا حساب تتر خود را شارژ کنید",status = 400
              )

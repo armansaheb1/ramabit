@@ -101,6 +101,9 @@ class Plans(models.Model):
 
     def get_cur(self):
         return self.currency.brand
+    
+    def get_image(self):
+        return self.currency.get_image()
 
     def __str__(self):
         return f"{self.title} ({self.id})"

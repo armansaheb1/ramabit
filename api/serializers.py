@@ -87,7 +87,17 @@ class CurrencyImageSerializer(serializers.ModelSerializer):
 class PlansSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Plans
-        fields = "__all__"
+        fields = (
+            "id",
+            "title", 
+            "currency", 
+            "des", 
+            "percent", 
+            "mini", 
+            "maxi", 
+            "period", 
+            "get_image"
+        )
 
 class MinersSerializer(serializers.ModelSerializer):
     class Meta:
