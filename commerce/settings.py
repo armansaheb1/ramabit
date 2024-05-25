@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import mimetypes
 
-ROOT = "http://www.ryanai.ir"
+ROOT = "https://www.ramabit.com/api"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -55,20 +55,20 @@ INSTALLED_APPS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
+    "https://ramabit.com",
     "http://localhost:8080",
     "http://localhost:3000",
     "https://www.ryanai.ir",
     "https://ryanai.ir",
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://ryanai.ir','https://www.ryanai.ir']
+CSRF_TRUSTED_ORIGINS = ['https://ryanai.ir','https://www.ryanai.ir', 'https://www.ramabit.com', 'https://ramabit.com/']
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -112,9 +112,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "myproject12",
-        "USER": "myprojectuser",
-        "PASSWORD": "password",
+        "NAME": "ramabitc_newramabit",
+        "USER": "ramabitc_ars",
+        "PASSWORD": "2832318@Ars",
         "HOST": "localhost",
     }
 }

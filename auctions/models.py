@@ -4,6 +4,7 @@ from django.utils import timezone
 import uuid
 from commerce.settings import ROOT
 from ckeditor.fields import RichTextField
+import uuid
 
 class bazdid(models.Model):
     date = models.DateField(default=timezone.now)
@@ -24,20 +25,21 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, date_of_birth, password=None):
-        """
-        Creates and saves a superuser with the given email, date of
-        birth and password.
-        """
+    def create_superuser(self,username, mobile,name,lastname, password=None):
+
         user = self.create_user(
-            email,
-            password=password,
-            date_of_birth=date_of_birth,
+            mobile = mobile,
+            username = username,
+            name = name,
+            lastname = lastname
         )
+
+        user.set_password(password)
         user.is_admin = True
+        user.is_staff = True
+        user.is_superuser = True
         user.save(using=self._db)
         return user
-
 
 class User(AbstractUser):
     first_name = None
@@ -233,6 +235,7 @@ class Askamountreq(models.Model):
 
 
 class Transactions(models.Model):
+    id = models.CharField(primary_key=True, default=str(uuid.uuid4())[:10], editable=False, unique = True, max_length = 10)
     date = models.DateField(default=timezone.now)
     amount = models.FloatField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

@@ -656,16 +656,16 @@ class plan(APIView):
         cur = request.data['cur']
         des = request.data['des']
         percent = request.data['percentm']
-        iden = request.data['iden']
         period = request.data['period']
-        auc = models.Plans(title = title , des = des , user = iden , percent = percent , period = period , cur=models.currencies.objects.get(name = cur).id)
+        auc = models.Plans(title = title , des = des , percent = percent , period = period , currency=models.currencies.objects.get(name = cur))
         auc.save()
         return Response()
 
-    def put(self, request):
+    def put(self, request, id):
+        cur = request.data['cur']
         auc = models.Plans.objects.get(id = id)
         auc.title = request.data['title']
-        auc.currency = request.data['cur']
+        auc.currency=models.currencies.objects.get(name = cur)
         auc.des = request.data['des']
         auc.percent = request.data['percentm']
         auc.period = request.data['period']
@@ -695,24 +695,34 @@ class miner(APIView):
         title = request.data['title']
         cur = request.data['cur']
         des = request.data['des']
-        percent = request.data['percentm']
         price = request.data['price']
         profit = request.data['profit']
         rate = request.data['rate']
         period = request.data['period']
-        auc = models.Miners(title = title , des = des , percent = percent , period = period , cur=models.currencies.objects.get(name = cur).id, price=price, rate=rate, profit=profit)
+        if 'pic' in request.FILES:
+            pic = request.FILES['pic']
+            auc = models.Miners(title = title , des = des , period = period , currency=models.currencies.objects.get(name = cur), price=price, rate=rate, profit=profit, pic= pic)
+            auc.save()
+            return Response()
+        auc = models.Miners(title = title , des = des , period = period , currency=models.currencies.objects.get(name = cur), price=price, rate=rate, profit=profit)
         auc.save()
         return Response()
 
-    def put(self, request):
+    def put(self, request, id):
         auc = models.Miners.objects.get(id = id)
         auc.title = request.data['title']
-        auc.currency = request.data['cur']
+        cur = request.data['cur']
+        auc.currency=models.currencies.objects.get(name = cur)
         auc.des = request.data['des']
         auc.price = request.data['price']
         auc.profit = request.data['profit']
         auc.rate = request.data['rate']
         auc.period = request.data['period']
+        if 'pic' in request.FILES:
+            pic = request.FILES['pic']
+            auc.pic = pic
+            auc.save()
+            return Response()
         auc.save()
         return Response()
         

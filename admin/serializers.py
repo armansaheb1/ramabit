@@ -135,6 +135,7 @@ class CurrencyImageSerializer(serializers.ModelSerializer):
 class PlansSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Plans
+        depth= 1
         fields = (
             "id",
             "title", 
