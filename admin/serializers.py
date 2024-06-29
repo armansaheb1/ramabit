@@ -7,7 +7,7 @@ User = get_user_model()
 
 class TransactionsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Transactions
+        model = models.Transaction
         depth = 1
         fields = "__all__"
 

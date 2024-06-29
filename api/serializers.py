@@ -10,6 +10,18 @@ class GeneralSerializer(serializers.ModelSerializer):
         model = models.General
         fields = "__all__"
 
+class AppSettingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.AppSettings
+        fields = "__all__"
+        
+        
+class NotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Notification
+        fields = "__all__"
+
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -32,6 +44,11 @@ class SettingsSerializer(serializers.ModelSerializer):
 class PagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.pages
+        fields = "__all__"
+        
+class DetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Details
         fields = "__all__"
 
 class RentedMinerSerializer(serializers.ModelSerializer):
@@ -87,7 +104,17 @@ class CurrencyImageSerializer(serializers.ModelSerializer):
 class PlansSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Plans
-        fields = "__all__"
+        fields = (
+            "id",
+            "title", 
+            "currency", 
+            "des", 
+            "percent", 
+            "mini", 
+            "maxi", 
+            "period", 
+            "get_image"
+        )
 
 class MinersSerializer(serializers.ModelSerializer):
     class Meta:
@@ -155,3 +182,16 @@ class ElanSerializer(serializers.ModelSerializer):
             "text",
             "get_image"
         )
+        
+class TicketsSerializer(serializers.ModelSerializer):
+    class Meta:
+        depth = 1
+        model = models.Tickets
+        fields = (
+            "date" ,
+    "subid" ,
+    "text" ,
+    "pic" ,
+    "sender",
+    "get_username"
+            )

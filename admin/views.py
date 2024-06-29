@@ -9,14 +9,15 @@ from rest_framework.authentication import (
 )
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
-
+from api import serializers as aucserializers
+from django.contrib.auth.hashers import make_password
 
 addamountreq = []
 askamountreq = []
 trans = []
 eplans = []
 pro = []
-transaction = models.Transactions.objects.all()
+transaction = models.Transaction.objects.all()
 
 
 class UserToken(APIView):
@@ -24,6 +25,15 @@ class UserToken(APIView):
         user = models.User.objects.get(id = id)
         token, _ = Token.objects.get_or_create(user=user)
         return Response(token.key)
+    def put(self, request, id):
+        user = models.User.objects.get(id = id)
+        user.is_active = not user.is_active
+        user.save()
+        return Response()
+    def delete(self, request, id):
+        user = models.User.objects.get(id = id)
+        user.delete()
+        return Response()
 
 
 class Users(APIView):
@@ -34,7 +44,7 @@ class Users(APIView):
 
 class Transaction(APIView):
     def get(self, request):
-        query = models.Transactions.objects.all()
+        query = models.Transaction.objects.all()
         serializer = serializers.TransactionsSerializer(query, many=True)
         return Response(serializer.data)
     
@@ -142,65 +152,65 @@ class Addamountreqs(APIView):
             wal.amount = float(wal.amount) + float(req.amount)
             wal.save()
             req.delete()
-            trans = models.Transactions(user = req.user , currency = req.currency ,amount = req.amount , act = 1)
+            trans = models.Transaction(user = req.user , currency = req.currency ,amount = req.amount , act = 1)
             trans.save()
         else:
             wal = models.wallet(user = req.user , currency = req.currency , amount = req.amount)
             wal.save()
             req.delete()
-            trans = models.Transactions(user = req.user , currency = req.currency ,amount = req.amount , act = 1)
+            trans = models.Transaction(user = req.user , currency = req.currency ,amount = req.amount , act = 1)
             trans.save()
-        if(models.User.objects.get(id = req.user).inv):
-            firstinv = models.User.objects.get(ref = models.User.objects.get(id = req.user).inv)
+        if(models.User.objects.get(id = req.user.id).inv):
+            firstinv = models.User.objects.get(ref = models.User.objects.get(id = req.user.id).inv)
             if(models.wallet.objects.filter(user = firstinv.id , currency = req.currency)):
                 wal2 = models.wallet.objects.get(user = firstinv.id , currency = req.currency)
                 wal2.amount = float(wal2.amount) + float(req.amount)* 0.02
                 wal2.save()
-                trans = models.profitlist(user = firstinv.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.02)
+                trans = models.profitlist(user = firstinv ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.02)
                 trans.save()
             else:
-                wal2 = models.wallet(user = firstinv.id , currency = req.currency , amount = float(req.amount)*  0.02)
+                wal2 = models.wallet(user = firstinv , currency = req.currency , amount = float(req.amount)*  0.02)
                 wal2.save()
-                trans = models.profitlist(user = firstinv.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)*   0.02)
+                trans = models.profitlist(user = firstinv ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)*   0.02)
                 trans.save()     
             if(firstinv.inv):
                 secondinv = models.User.objects.get(ref = firstinv.inv)
-                if(models.wallet.objects.filter(user = secondinv.id , currency = req.currency)):
-                    wal3 = models.wallet.objects.get(user = secondinv.id , currency = req.currency)
+                if(models.wallet.objects.filter(user = secondinv , currency = req.currency)):
+                    wal3 = models.wallet.objects.get(user = secondinv , currency = req.currency)
                     wal3.amount = float(wal3.amount) + float(req.amount)* 0.01
                     wal3.save()
-                    trans = models.profitlist(user = secondinv.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.01 )
+                    trans = models.profitlist(user = secondinv ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.01 )
                     trans.save()
                 else:
-                    wal3 = models.wallet(user = secondinv.id , currency = req.currency , amount = float(req.amount)* 0.01)
+                    wal3 = models.wallet(user = secondinv , currency = req.currency , amount = float(req.amount)* 0.01)
                     wal3.save()
-                    trans = models.profitlist(user = secondinv.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.01 )
+                    trans = models.profitlist(user = secondinv ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.01 )
                     trans.save()
                 if(secondinv.inv):
                     thirdinv = models.User.objects.get(ref = secondinv.inv)
-                    if(models.wallet.objects.filter(user = thirdinv.id , currency = req.currency)):
-                        wal4 = models.wallet.objects.get(user = thirdinv.id , currency = req.currency)
+                    if(models.wallet.objects.filter(user = thirdinv , currency = req.currency)):
+                        wal4 = models.wallet.objects.get(user = thirdinv , currency = req.currency)
                         wal4.amount = float(wal4.amount) + float(req.amount)* 0.005
                         wal4.save()
-                        trans = models.profitlist(user = thirdinv.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.005 )
+                        trans = models.profitlist(user = thirdinv ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.005 )
                         trans.save()
                     else:
-                        wal4 = models.wallet(user = thirdinv.id , currency = req.currency , amount = float(req.amount)* 0.005)
+                        wal4 = models.wallet(user = thirdinv , currency = req.currency , amount = float(req.amount)* 0.005)
                         wal4.save()
-                        trans = models.profitlist(user = thirdinv.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.005 )
+                        trans = models.profitlist(user = thirdinv ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.005 )
                         trans.save()
                         if(thirdinv.inv):
                             fourth = models.User.objects.get(ref = thirdinv.inv)
-                            if(models.wallet.objects.filter(user = fourth.id , currency = req.currency)):
-                                wal5 = models.wallet.objects.get(user = fourth.id , currency = req.currency)
+                            if(models.wallet.objects.filter(user = fourth , currency = req.currency)):
+                                wal5 = models.wallet.objects.get(user = fourth , currency = req.currency)
                                 wal5.amount = float(wal5.amount) + float(req.amount)* 0.0025
                                 wal5.save()
-                                trans = models.profitlist(user = fourth.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.0025 )
+                                trans = models.profitlist(user = fourth ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.0025 )
                                 trans.save()
                             else:
-                                wal5 = models.wallet(user = fourth.id , currency = req.currency , amount = float(req.amount)* 0.0025)
+                                wal5 = models.wallet(user = fourth , currency = req.currency , amount = float(req.amount)* 0.0025)
                                 wal5.save()
-                                trans = models.profitlist(user = fourth.id ,invid = req.user, currency = req.currency ,amount = float(req.amount)* 0.0025 )
+                                trans = models.profitlist(user = fourth ,invid = req.user.id, currency = req.currency ,amount = float(req.amount)* 0.0025 )
                                 trans.save()
         query = models.Addamountreq.objects.all()
         serializer = serializers.AddamountreqSerializer(query, many=True)
@@ -209,7 +219,7 @@ class Addamountreqs(APIView):
     def delete(self, request, id):
         req = models.Addamountreq.objects.get(id = id)
         req.delete()
-        rquery = models.Addamountreq.objects.all()
+        query = models.Addamountreq.objects.all()
         serializer = serializers.AddamountreqSerializer(query, many=True)
         return Response(serializer.data)
     
@@ -228,7 +238,7 @@ class Askamountreqs(APIView):
         wal.amount = float(wal.amount) - float(req.amount)
         wal.save()
         req.delete()
-        trans = models.Transactions(user = req.user , currency =req.currency ,amount = req.amount , act = 2)
+        trans = models.Transaction(user = req.user , currency =req.currency ,amount = req.amount , act = 2)
         trans.save()
         query = models.Askamountreq.objects.all()
         serializer = serializers.AskamountreqSerializer(query, many=True)
@@ -363,14 +373,14 @@ class amountreqcheck(APIView):
             wal.save()
             req = models.Addamountreq.objects.get(id = idm)
             req.delete()
-            trans = models.Transactions(user = req.user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
+            trans = models.Transaction(user = req.user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
             trans.save()
         else:
             wal = models.wallet(user = req.user , currency = models.currencies.objects.get(id = curid) , amount = amount)
             wal.save()
             req = models.Addamountreq.objects.get(id = idm)
             req.delete()
-            trans = models.Transactions(user = req.user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
+            trans = models.Transaction(user = req.user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
             trans.save()
         if(models.User.objects.get(id = req.user).inv):
             firstinv = models.User.objects.get(ref = models.User.objects.get(id = req.user).inv)
@@ -443,7 +453,7 @@ class askamountreqcheck(APIView):
         wal.save()
         req = models.Askamountreq.objects.get(id = idm)
         req.delete()
-        trans = models.Transactions(user = req.user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 2)
+        trans = models.Transaction(user = req.user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 2)
         trans.save()
         return Response
 
@@ -507,35 +517,35 @@ class post(APIView):
 class adminincrease(APIView):
     def post(self, request):
         amount = request.data["amount"]
-        curid = request.data["curid"]
-        user = request.data["userid"]
+        curid = request.data["cur"]
+        user = models.User.objects.get(id = request.data["userid"])
         
         if(models.wallet.objects.filter(user = user , currency = models.currencies.objects.get(id = curid))):
             wal = models.wallet.objects.get(user = user , currency = models.currencies.objects.get(id = curid))
             wal.amount = float(wal.amount) + float(amount)
             wal.save()
-            trans = models.Transactions(user = user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
+            trans = models.Transaction(user = user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
             trans.save()
         else:
             wal = models.wallet(user = user , currency = models.currencies.objects.get(id = curid) , amount = amount)
             wal.save()
-            trans = models.Transactions(user = user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
+            trans = models.Transaction(user = user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 1)
             trans.save()
         return Response()
 
 
 class admindecrease(APIView):
     def post(self, request):
-        amount = request.POST["amount"]
-        curid = request.POST["curid"]
-        user = request.POST["userid"]
+        amount = request.data["amount"]
+        curid = request.data["cur"]
+        user = models.User.objects.get(id = request.data["userid"])
         
         
         if(models.wallet.objects.filter(user = user , currency = models.currencies.objects.get(id = curid))):
             wal = models.wallet.objects.get(user = user , currency = models.currencies.objects.get(id = curid))
             wal.amount = float(wal.amount) - float(amount)
             wal.save()
-            trans = models.Transactions(user = user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 2)
+            trans = models.Transaction(user = user , currency = models.currencies.objects.get(id = curid) ,amount = amount , act = 2)
             trans.save()
         else:
             return Response(status=400)
@@ -657,7 +667,7 @@ class plan(APIView):
         des = request.data['des']
         percent = request.data['percentm']
         period = request.data['period']
-        auc = models.Plans(title = title , des = des , percent = percent , period = period , currency=models.currencies.objects.get(name = cur))
+        auc = models.Plans(title = title , des = des , percent = percent , period = period , currency=models.currencies.objects.get(id = cur))
         auc.save()
         return Response()
 
@@ -665,7 +675,7 @@ class plan(APIView):
         cur = request.data['cur']
         auc = models.Plans.objects.get(id = id)
         auc.title = request.data['title']
-        auc.currency=models.currencies.objects.get(name = cur)
+        auc.currency=models.currencies.objects.get(id = cur)
         auc.des = request.data['des']
         auc.percent = request.data['percentm']
         auc.period = request.data['period']
@@ -701,7 +711,7 @@ class miner(APIView):
         period = request.data['period']
         if 'pic' in request.FILES:
             pic = request.FILES['pic']
-            auc = models.Miners(title = title , des = des , period = period , currency=models.currencies.objects.get(name = cur), price=price, rate=rate, profit=profit, pic= pic)
+            auc = models.Miners(title = title , des = des , period = period , currency=models.currencies.objects.get(id = cur), price=price, rate=rate, profit=profit, pic= pic)
             auc.save()
             return Response()
         auc = models.Miners(title = title , des = des , period = period , currency=models.currencies.objects.get(name = cur), price=price, rate=rate, profit=profit)
@@ -712,7 +722,7 @@ class miner(APIView):
         auc = models.Miners.objects.get(id = id)
         auc.title = request.data['title']
         cur = request.data['cur']
-        auc.currency=models.currencies.objects.get(name = cur)
+        auc.currency=models.currencies.objects.get(id = cur)
         auc.des = request.data['des']
         auc.price = request.data['price']
         auc.profit = request.data['profit']
@@ -860,3 +870,72 @@ class Pages(APIView):
         serializer = serializers.PagesSerializer(auc, many=True)
         return Response(serializer.data)
 
+
+class Subjects(APIView):
+
+    def get(self, request):
+        subject = []
+        acts=''
+        for item in models.Subjects.objects.all():
+            if item.act == 0 :
+                acts = 'در حال بررسی'
+            if item.act == 1 :
+                acts = 'پاسخ داده شده'
+            if item.act == 2 :
+                acts = 'پاسخ  مشتری'
+            if item.act == 3 :
+                acts = 'بسته شده'
+            subject.append([item.title , item.date , item.lastdate , acts,item.id , item.read, item.user.username])
+            
+        return Response(subject)
+        
+class tickets(APIView):
+
+    def get(self, request, id):
+        query = models.Tickets.objects.filter(subid = id)
+        serializer = aucserializers.TicketsSerializer(query, many=True)
+        return Response(serializer.data)
+        
+class ansticket(APIView):
+    def post(self, request):
+        subid = request.data['id']
+        des = request.data['des']
+        if 'pic' in request.FILES:
+            pic = request.FILES['pic']
+            ticket = models.Tickets(text = des , pic = pic,subid = subject.id,sender=1)
+        ticket = models.Tickets( text = des ,subid = subid, sender=1)
+        ticket.save()
+        sub = models.Subjects.objects.get(id = subid)
+        sub.act = 1
+        sub.read = False
+        sub.save()
+        return Response("تیکت شما با موفقیت ثبت شد"
+            )
+            
+class closeplanadmin(APIView):
+    def post(self, request):
+        bidid = request.data['bidid']
+        mablagh = request.data['mablagh']
+        bids = models.bid.objects.get(id = bidid)
+        plans = bids.plan
+        wall = models.wallet.objects.get(user = bids.user.id , currency = plans.currency)
+        wall.amount = wall.amount + float(mablagh)
+        wall.save()
+        bids.delete()
+            
+        return Response()
+
+
+class adminchangepass(APIView):
+    def post(self, request):
+        from django.contrib.auth.hashers import PBKDF2PasswordHasher
+        passw = request.data["password"]
+        repassw = request.data["repassword"]
+        user = models.User.objects.get(id=request.data["userid"])
+        if passw == repassw:
+            passs = make_password(str(passw))
+            user.password = passs
+            user.save()
+            return Response()
+        return Response(status=400)
+                    

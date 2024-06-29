@@ -3,7 +3,7 @@ from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render , redirect
 from django.urls import reverse
-from .models import User ,Forget, Job, pages , bazdid , Tickets,Subjects, Askamountreq, profitlist , settings , post , User ,  Transactions , Addamountreq, Plans , bid  ,Cat  , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
+from .models import User ,Forget, Job, pages , bazdid , Tickets,Subjects, Askamountreq, profitlist , settings , post , User , Addamountreq, Plans , bid  ,Cat  , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank
 from django.core.mail import send_mail
 import json
 import time
@@ -1647,7 +1647,7 @@ def resetpass(request , key):
             "m": "لینک استفاده شده معتبر نیست",
             'set' : settings.objects.get(id=1)
         })
-        user = User.objects.get(email = Forget.objects.get(key = request.POST['key']).email)
+        user = models.User.objects.get(email = Forget.objects.get(key = request.POST['key']).email)
         passw = request.POST['password']
         repassw = request.POST['repassword']
         if passw == repassw:

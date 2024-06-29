@@ -37,5 +37,12 @@ urlpatterns = [
     path("product/<int:id>", views.product.as_view(), name="home"),
     path("page", views.Pages.as_view(), name="home"),
     path("page/<int:id>", views.Pages.as_view(), name="home"),
+    path("subjects", views.Subjects.as_view(), name="home"),
+    path("tickets/<id>", views.tickets.as_view(), name="home"),
+    path("ansticket", views.ansticket.as_view(), name="home"),
+    path("closeplan", views.closeplanadmin.as_view(), name="home"),
+    path("admindecrease", views.admindecrease.as_view(), name="home"),
+    path("adminincrease", views.adminincrease.as_view(), name="home"),
+    path("adminchangepass", views.adminchangepass.as_view(), name="home"),
     
 ]

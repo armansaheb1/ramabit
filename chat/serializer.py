@@ -10,7 +10,12 @@ class AdminChatSerializer(serializers.ModelSerializer):
             "owner",
             "uri",
             "username",
+            "get_seen",
             "name",
+            "get_user",
+            "get_mobile",
+            "get_email"
+
         )
 
 class ChatRoomSerializer(serializers.ModelSerializer):
@@ -25,6 +30,7 @@ class ChatRoomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ChatRoom
+        depth = 1
         fields =  (
             "id",
             "user1", 
