@@ -7,7 +7,7 @@ User = get_user_model()
 
 class TransactionsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Transactions
+        model = models.Transaction
         depth = 1
         fields = "__all__"
 
@@ -135,6 +135,7 @@ class CurrencyImageSerializer(serializers.ModelSerializer):
 class PlansSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Plans
+        depth= 1
         fields = (
             "id",
             "title", 

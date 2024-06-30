@@ -6,7 +6,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project_name.settings")
 from ippanel import Client
 from django.core.management.base import BaseCommand
 from django.core.mail import send_mail
-from auctions.models import Job, User , profitlist,  Transactions , Addamountreq, Plans , bid  , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank, Miners, Askamountreq, Subjects, RentedMiner
+from auctions.models import Job, User , profitlist , Addamountreq, Plans , bid  , act , currencies ,wallet , Verify , Adminverifymelli , Adminverifybank, Miners, Askamountreq, Subjects, RentedMiner
 from datetime import timedelta , datetime
 
 

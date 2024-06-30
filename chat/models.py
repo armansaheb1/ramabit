@@ -8,8 +8,9 @@ from django.utils import timezone
 User = get_user_model()
 
 class ChatUser(models.Model):
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length = 100,unique = True)
     mobile = models.CharField(max_length = 100, null =True)
+    email = models.EmailField(max_length = 100, null =True)
     
 
 
@@ -39,9 +40,16 @@ class ChatSession(TrackableDateModel):
     name = models.CharField(max_length=100,null=True)
     username = models.CharField(max_length=100,null=True)
     uri = models.URLField(default=_generate_unique_uri)
+    update_date = models.DateTimeField(auto_now=True)
 
     def get_user(self):
         return self.owner.name
+        
+    def get_mobile(self):
+        return self.owner.mobile
+        
+    def get_email(self):
+        return self.owner.email
 
     def get_seen(self):
         notseen = 0

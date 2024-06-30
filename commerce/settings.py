@@ -12,8 +12,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import mimetypes
+from corsheaders.defaults import default_headers
 
-ROOT = "http://www.ryanai.ir"
+
+
+
+ROOT = "https://www.ramabit.com/api"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -55,23 +59,26 @@ INSTALLED_APPS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
+    "https://ramabit.com",
     "http://localhost:8080",
     "http://localhost:3000",
     "https://www.ryanai.ir",
     "https://ryanai.ir",
 ]
 
-CSRF_TRUSTED_ORIGINS = ['https://ryanai.ir','https://www.ryanai.ir']
-
+CSRF_TRUSTED_ORIGINS = ['https://ryanai.ir','https://www.ryanai.ir', 'https://www.ramabit.com', 'https://ramabit.com/']
+CORS_ALLOW_HEADERS = default_headers + ('cache-control',)
 MIDDLEWARE = [
+    
+    "django.middleware.security.SecurityMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "api.middlewares.UpdateLastActivityMiddleware",
 ]
 
 ROOT_URLCONF = "commerce.urls"
@@ -112,9 +119,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "myproject12",
-        "USER": "myprojectuser",
-        "PASSWORD": "password",
+        "NAME": "ramabitc_newramabit",
+        "USER": "ramabitc_ars",
+        "PASSWORD": "2832318@Ars",
         "HOST": "localhost",
     }
 }
@@ -159,14 +166,15 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "mail.ramabit.com"
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "info@ramabit.com"
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = "noreply@ramabit.com"
 EMAIL_HOST_PASSWORD = "Ahmad121@@"
 
 DEFAULT_FROM_EMAIL = "default from email"
+DEFAULT_FROM_EMAIL = 'ramabit.com noreply@ramabit.com'
 
 
 AZ_IRANIAN_BANK_GATEWAYS = {
@@ -203,4 +211,8 @@ LOGGING = {
             "propagate": True,
         },
     },
+}
+DJOSER = {
+'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+
 }

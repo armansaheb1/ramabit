@@ -4,6 +4,8 @@ from django.utils import timezone
 import uuid
 from commerce.settings import ROOT
 from ckeditor.fields import RichTextField
+import uuid
+from django.db.models import Q
 
 class bazdid(models.Model):
     date = models.DateField(default=timezone.now)
@@ -11,33 +13,44 @@ class bazdid(models.Model):
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self,username, mobile,name,lastname, password=None):
+    def get_by_natural_key(self, username):
+        return self.get(
+            Q(**{self.model.USERNAME_FIELD: username}) |
+            Q(**{self.model.EMAIL_FIELD: username})
+        )
 
-        user = self.model(
+    def create_user(self,username, mobile,name,lastname, email, password=None):
+
+        user = self.model.objects.create(
             mobile = mobile,
             username = username,
             name = name,
-            lastname = lastname
+            lastname = lastname,
+            email = email
         )
 
         user.set_password(password)
+        user.is_active = True
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, date_of_birth, password=None):
-        """
-        Creates and saves a superuser with the given email, date of
-        birth and password.
-        """
+    def create_superuser(self,username, mobile,name,lastname, email, password=None):
+
         user = self.create_user(
-            email,
-            password=password,
-            date_of_birth=date_of_birth,
+            mobile = mobile,
+            username = username,
+            name = name,
+            lastname = lastname,
+            email = email
         )
+
+        user.set_password(password)
         user.is_admin = True
+        user.is_staff = True
+        user.is_superuser = True
+        user.is_active = True
         user.save(using=self._db)
         return user
-
 
 class User(AbstractUser):
     first_name = None
@@ -50,9 +63,13 @@ class User(AbstractUser):
     name = models.CharField(max_length=100, null=True, verbose_name="نام")
     lastname = models.CharField(max_length=100, null=True, verbose_name="نام خانوادگی")
     mobile = models.CharField(null=True, verbose_name="موبایل", max_length=100)
+    email = models.EmailField(null=True)
     is_active = models.BooleanField(default=True)
     is_verified = models.BooleanField(default=False)
-    REQUIRED_FIELDS = ["name", "lastname", "mobile"]
+    level1 = models.ManyToManyField("self", related_name="l1", symmetrical=True)
+    level2 = models.ManyToManyField("self", related_name="l2", symmetrical=True)
+    level3 = models.ManyToManyField("self", related_name="l3", symmetrical=True)
+    REQUIRED_FIELDS = ["name", "lastname", "mobile", "email"]
 
     objects = MyUserManager()
 
@@ -60,7 +77,11 @@ class User(AbstractUser):
         return f"({self.id}){self.username}"
 
 
-
+class timer(models.Model):
+    date = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    
 class currencies(models.Model):
     name = models.CharField(max_length=100, verbose_name=" نام ارز")
     brand = models.CharField(max_length=100, null=True, verbose_name=" نماد ارز")
@@ -68,6 +89,7 @@ class currencies(models.Model):
     qr = models.ImageField(upload_to="cur", null=True)
     address = models.CharField(max_length=1000, null=True)
     price = models.FloatField(default = 0)
+    align = models.IntegerField(unique=True, null=True)
 
     def __str__(self):
         return self.brand
@@ -87,7 +109,7 @@ class wallet(models.Model):
 
 
     def __str__(self):
-        return f"({self.id}){self.user} {self.amount}"
+        return f"({self.currency.brand}){self.user} {self.amount}"
 
 
 class Plans(models.Model):
@@ -101,7 +123,7 @@ class Plans(models.Model):
 
     def get_cur(self):
         return self.currency.brand
-    
+
     def get_image(self):
         return self.currency.get_image()
 
@@ -235,13 +257,15 @@ class Askamountreq(models.Model):
     link = models.CharField(max_length=1000, null=True)
 
 
-class Transactions(models.Model):
+    
+class Transaction(models.Model):
     date = models.DateField(default=timezone.now)
     amount = models.FloatField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
     act = models.IntegerField(null=True)
+
 
 
 class blog(models.Model):
@@ -302,13 +326,17 @@ class settings(models.Model):
     s3 = models.FloatField(default=0)
     s4 = models.FloatField(default=0)
 
+class AppSettings(models.Model):
+    welcometitle = models.CharField(max_length=100)
+    welcometext = models.TextField()
+
 
 class profitlist(models.Model):
     date = models.DateField(default=timezone.now)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     currency = models.ForeignKey(currencies, on_delete=models.CASCADE, null=True)
-    plan = models.ForeignKey(Plans, on_delete=models.CASCADE, null=True)
+    plan = models.ForeignKey(Plans, on_delete=models.CASCADE, null=True, blank=True)
     invid = models.IntegerField(null=True, blank=True)
     amount = models.FloatField()
 
@@ -332,6 +360,9 @@ class Tickets(models.Model):
     text = models.CharField(max_length=1000)
     pic = models.ImageField(upload_to="ticket", null=True)
     sender = models.IntegerField(default=0)
+    
+    def get_username(self):
+        return Subjects.objects.get(id = self.subid).user.username
 
 
 class pages(models.Model):
@@ -348,7 +379,7 @@ class Details(models.Model):
     text = RichTextField()
 
     def __str__(self):
-        return self.name
+        return self.page
 
 
 class Job(models.Model):
@@ -381,7 +412,11 @@ class RentedMiner(models.Model):
     def get_image(self):
         return self.miner.get_pic()
 
-
+class Notification(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=100)
+    text = models.CharField(max_length = 1000)
+    read = models.BooleanField(default=False)
 
 class Elan(models.Model):
     title = models.CharField(max_length=100)
@@ -390,3 +425,5 @@ class Elan(models.Model):
 
     def get_image(self):
         return  ROOT + '/media/' + self.pic.name
+        
+
