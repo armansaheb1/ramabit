@@ -240,6 +240,13 @@ class PlansIndex(APIView):
         serializer = serializers.PlansSerializer(query, many=True)
         return Response(serializer.data)
 
+class OnePlan(APIView):
+    def get(self, request, id):
+        query = models.Plans.objects.get(id = id)
+        serializer = serializers.PlansSerializer(query)
+        return Response(serializer.data)
+
+
 class MinersByCurrencies(APIView):
     @method_decorator(cache_page(60 * 60 * 2))
     @method_decorator(vary_on_headers("Authorization"))
@@ -269,6 +276,7 @@ class MinersPic(APIView):
         query = models.Miners.objects.all()
         serializer = serializers.MinersSerializer(query, many=True)
         return Response(serializer.data)
+    
 
 
 class Miners(APIView):
@@ -523,7 +531,6 @@ class closeplan(APIView):
         return Response("پلن با موفقیت بسته شد",status = 200
              )
 
-
 class RentMiner(APIView):
     authentication_classes = [
         SessionAuthentication,
@@ -564,6 +571,26 @@ class RentMiners(APIView):
             return Response("ابتدا حساب تتر خود را شارژ کنید",status = 400
              )
 
+
+class RentMiners(APIView):
+    authentication_classes = [
+        SessionAuthentication,
+        BasicAuthentication,
+        TokenAuthentication,
+    ]
+    permission_classes = [IsAuthenticated]
+    def post(self, request):
+        miner = models.Miners.objects.get(id = int(request.data['miner']))
+        amount = int(request.data['amount'])
+        wallet, _ = models.wallet.objects.get_or_create(user = request.user, currency = models.currencies.objects.get(brand = 'USDT'))
+        if miner.price * amount <= wallet.amount:
+            for _ in range(amount):
+                wallet.amount = wallet.amount - miner.price
+                models.RentedMiner.objects.create(miner = miner ,user = request.user)
+            return Response('اجاره ی ماینر با موفقیت انجام شد')
+        else:
+            return Response("ابتدا حساب تتر خود را شارژ کنید",status = 400
+             )
 
 class Miner(APIView):
     authentication_classes = [
